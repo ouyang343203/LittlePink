@@ -15,6 +15,11 @@
 		0E36A406272F97390047E368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A405272F97390047E368 /* Assets.xcassets */; };
 		0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A407272F97390047E368 /* LaunchScreen.storyboard */; };
 		0E36A411272F990E0047E368 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A410272F990E0047E368 /* .gitignore */; };
+		0EFCC91C27313F3000019065 /* Main1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCC91A27313F3000019065 /* Main1.storyboard */; };
+		0EFCC91E27313F5600019065 /* Main2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCC91D27313F5600019065 /* Main2.storyboard */; };
+		0EFCC92127313F6D00019065 /* Main3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCC91F27313F6D00019065 /* Main3.storyboard */; };
+		0EFCC92327313F8500019065 /* Main4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCC92227313F8500019065 /* Main4.storyboard */; };
+		0EFCC92627313F9700019065 /* Main5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EFCC92427313F9700019065 /* Main5.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		0E36A408272F97390047E368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E36A40A272F97390047E368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E36A410272F990E0047E368 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0EFCC91B27313F3000019065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LittlePink/Base.lproj/Main1.storyboard; sourceTree = "<group>"; };
+		0EFCC91D27313F5600019065 /* Main2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main2.storyboard; sourceTree = "<group>"; };
+		0EFCC92027313F6D00019065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LittlePink/Base.lproj/Main3.storyboard; sourceTree = "<group>"; };
+		0EFCC92227313F8500019065 /* Main4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main4.storyboard; sourceTree = "<group>"; };
+		0EFCC92527313F9700019065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LittlePink/Base.lproj/Main5.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,11 @@
 		0E36A3ED272F97350047E368 = {
 			isa = PBXGroup;
 			children = (
+				0EFCC92427313F9700019065 /* Main5.storyboard */,
+				0EFCC92227313F8500019065 /* Main4.storyboard */,
+				0EFCC91F27313F6D00019065 /* Main3.storyboard */,
+				0EFCC91D27313F5600019065 /* Main2.storyboard */,
+				0EFCC91A27313F3000019065 /* Main1.storyboard */,
 				0E36A410272F990E0047E368 /* .gitignore */,
 				0E36A3F8272F97350047E368 /* LittlePink */,
 				0E36A3F7272F97350047E368 /* Products */,
@@ -131,9 +146,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EFCC92327313F8500019065 /* Main4.storyboard in Resources */,
+				0EFCC91C27313F3000019065 /* Main1.storyboard in Resources */,
 				0E36A411272F990E0047E368 /* .gitignore in Resources */,
 				0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */,
+				0EFCC92627313F9700019065 /* Main5.storyboard in Resources */,
+				0EFCC92127313F6D00019065 /* Main3.storyboard in Resources */,
 				0E36A406272F97390047E368 /* Assets.xcassets in Resources */,
+				0EFCC91E27313F5600019065 /* Main2.storyboard in Resources */,
 				0E36A401272F97350047E368 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +189,30 @@
 				0E36A408272F97390047E368 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0EFCC91A27313F3000019065 /* Main1.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EFCC91B27313F3000019065 /* Base */,
+			);
+			name = Main1.storyboard;
+			sourceTree = "<group>";
+		};
+		0EFCC91F27313F6D00019065 /* Main3.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EFCC92027313F6D00019065 /* Base */,
+			);
+			name = Main3.storyboard;
+			sourceTree = "<group>";
+		};
+		0EFCC92427313F9700019065 /* Main5.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0EFCC92527313F9700019065 /* Base */,
+			);
+			name = Main5.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -300,9 +344,11 @@
 				DEVELOPMENT_TEAM = 4ZPFWZ992X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,7 +360,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -328,9 +374,11 @@
 				DEVELOPMENT_TEAM = 4ZPFWZ992X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
