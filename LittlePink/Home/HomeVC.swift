@@ -20,15 +20,16 @@ class HomeVC:ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
   // MARK: - 设置上方的导航bar
-        //1 设置seledtbar--按钮下方下划线条
-        settings.style.selectedBarBackgroundColor = UIColor(named: "main")!
-        settings.style.selectedBarHeight = 3
+        //1 设置seledtbar--按钮下方下方线条
+        settings.style.selectedBarBackgroundColor = UIColor(named: "main")!//颜色
+        settings.style.selectedBarHeight = 3//高度
          
-        // ButtonBarP--设置文本或图片的按钮
-        settings.style.buttonBarItemBackgroundColor = .clear
+        //2 ButtonBarP--设置文本或图片的按钮
+        settings.style.buttonBarItemBackgroundColor = .clear//设置bar的背景颜色
         settings.style.buttonBarItemTitleColor = .label
         settings.style.buttonBarItemLeftRightMargin = 0//两个margin件的间距
-        settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 13)
+        settings.style.buttonBarMinimumLineSpacing = 20
+        settings.style.buttonBarItemFont = UIFont.systemFont(ofSize: 15)
         settings.style.buttonBarLeftContentInset = 115//距离View最左间距
         settings.style.buttonBarRightContentInset = 115//距离View右边间距
         
@@ -37,7 +38,7 @@ class HomeVC:ButtonBarPagerTabStripViewController {
         // Do any additional setup after loading the view.
         //        tabBarController?.tabBar.tintColor = .red//设选中当前
         //        tabBarController?.tabBar.backgroundColor = .yellow
-        containerView.bounces = false//设置禁止又回弹的效果
+        containerView.bounces = false//设置禁止又回弹的效果 containerViev storyboard上的scrollcView
         //设置选中和未选中的buttonBarItemtitle颜色
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
@@ -55,18 +56,19 @@ class HomeVC:ButtonBarPagerTabStripViewController {
                 oldCell?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }
         }
-          // MARK: - 需要在主线层重射阳设置才能默认选中指的页面
+//          // MARK: - 需要在主线层重射阳设置才能默认选中指的页面
 //        DispatchQueue.main.async {
 //            self.moveToViewController(at: 1, animated: false)
 //        }
     }
+    //添加控制前
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-          let FollowVC = storyboard!.instantiateViewController(withIdentifier: KFollowVCID)
-          let NearByVC = storyboard!.instantiateViewController(withIdentifier: KNearByVCID)
-          let DiscoverVC = storyboard!.instantiateViewController(withIdentifier: KDiscoverVCID)
-          return [DiscoverVC,FollowVC,NearByVC,]
+        let DiscoverVC = storyboard!.instantiateViewController(withIdentifier: KDiscoverVCID)
+        let FollowVC = storyboard!.instantiateViewController(withIdentifier: KFollowVCID)
+        let NearByVC = storyboard!.instantiateViewController(withIdentifier: KNearByVCID)
+        return [DiscoverVC,FollowVC,NearByVC,]
     }
-    
+  // MARK: - 这个方法效果不理想会偏向左侧一边不适用 需要buttonBarLeftContentInset和buttonBarRightContentInset才有效
 //    override func calculateStretchedCellWidths(_ minimumCellWidths: [CGFloat], suggestedStretchedCellWidth: CGFloat, previousNumberOfLargeCells: Int) -> CGFloat {
 //        return 10
 //    }

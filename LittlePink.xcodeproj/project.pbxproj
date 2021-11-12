@@ -24,6 +24,9 @@
 		98A79D3D2739106C00204DA0 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3C2739106C00204DA0 /* DiscoverVC.swift */; };
 		98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3E2739128700204DA0 /* NearByVC.swift */; };
 		98A79D43273914CF00204DA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D42273914CF00204DA0 /* Constants.swift */; };
+		98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */; };
+		98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */; };
+		98F25FDB273D208000B46F02 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 98F25FDA273D208000B46F02 /* README.md */; };
 		B3D38CE9F4B8A13286E44437 /* Pods_LittlePink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CA0333088E376A25B73CE5 /* Pods_LittlePink.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +52,9 @@
 		98A79D3C2739106C00204DA0 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		98A79D3E2739128700204DA0 /* NearByVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByVC.swift; sourceTree = "<group>"; };
 		98A79D42273914CF00204DA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallVC.swift; sourceTree = "<group>"; };
+		98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallCell.swift; sourceTree = "<group>"; };
+		98F25FDA273D208000B46F02 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A454DBB654BE65218EDD6D3B /* Pods-LittlePink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.release.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +73,7 @@
 		0E36A3ED272F97350047E368 = {
 			isa = PBXGroup;
 			children = (
+				98F25FDA273D208000B46F02 /* README.md */,
 				0EFCC92427313F9700019065 /* Main5.storyboard */,
 				0EFCC92227313F8500019065 /* Main4.storyboard */,
 				0EFCC91F27313F6D00019065 /* Main3.storyboard */,
@@ -93,8 +100,11 @@
 			children = (
 				0E36A3F9272F97350047E368 /* AppDelegate.swift */,
 				0E36A3FB272F97350047E368 /* SceneDelegate.swift */,
-				98A79D42273914CF00204DA0 /* Constants.swift */,
 				98A79D442739174000204DA0 /* Home */,
+				98F25FD8273D196E00B46F02 /* NearBy */,
+				98F25FD7273D196000B46F02 /* Follow */,
+				98F25FD6273D194F00B46F02 /* Discover */,
+				98F25FD9273D1EDF00B46F02 /* Commom */,
 				0E36A3FF272F97350047E368 /* Main.storyboard */,
 				0E36A405272F97390047E368 /* Assets.xcassets */,
 				0E36A407272F97390047E368 /* LaunchScreen.storyboard */,
@@ -116,11 +126,50 @@
 			isa = PBXGroup;
 			children = (
 				98A79D382738D90F00204DA0 /* HomeVC.swift */,
-				98A79D3A2739102600204DA0 /* FollowVC.swift */,
-				98A79D3C2739106C00204DA0 /* DiscoverVC.swift */,
-				98A79D3E2739128700204DA0 /* NearByVC.swift */,
+				98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */,
+				98F25FD5273D18F800B46F02 /* views */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		98F25FD5273D18F800B46F02 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		98F25FD6273D194F00B46F02 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				98A79D3C2739106C00204DA0 /* DiscoverVC.swift */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		98F25FD7273D196000B46F02 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				98A79D3A2739102600204DA0 /* FollowVC.swift */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		98F25FD8273D196E00B46F02 /* NearBy */ = {
+			isa = PBXGroup;
+			children = (
+				98A79D3E2739128700204DA0 /* NearByVC.swift */,
+			);
+			path = NearBy;
+			sourceTree = "<group>";
+		};
+		98F25FD9273D1EDF00B46F02 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				98A79D42273914CF00204DA0 /* Constants.swift */,
+			);
+			path = Commom;
 			sourceTree = "<group>";
 		};
 		A10933AEEA0964A03BB12D10 /* Pods */ = {
@@ -194,6 +243,7 @@
 			files = (
 				0EFCC92327313F8500019065 /* Main4.storyboard in Resources */,
 				0EFCC91C27313F3000019065 /* Main1.storyboard in Resources */,
+				98F25FDB273D208000B46F02 /* README.md in Resources */,
 				0E36A411272F990E0047E368 /* .gitignore in Resources */,
 				0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */,
 				0EFCC92627313F9700019065 /* Main5.storyboard in Resources */,
@@ -254,6 +304,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */,
+				98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */,
+				98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */,
 				98A79D3D2739106C00204DA0 /* DiscoverVC.swift in Sources */,
 				98A79D392738D90F00204DA0 /* HomeVC.swift in Sources */,
 				0E36A3FA272F97350047E368 /* AppDelegate.swift in Sources */,

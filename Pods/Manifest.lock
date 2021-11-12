@@ -1,16 +1,20 @@
 PODS:
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.8)
   - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout/Swift
   - XLPagerTabStrip (~> 8.1.0)
 
 SPEC REPOS:
   trunk:
+    - CHTCollectionViewWaterfallLayout
     - XLPagerTabStrip
 
 SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: b8a6d220c35e54b905445c511b59068b410d0d97
+PODFILE CHECKSUM: 53343f0054ec7de362088cace39df109f931c078
 
 COCOAPODS: 1.11.2
