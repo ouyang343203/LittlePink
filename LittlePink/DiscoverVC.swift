@@ -59,7 +59,7 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
         
         var Controllers:[UIViewController] = []
         for channel in kchannels{
-            let channelvc = storyboard?.instantiateViewController(withIdentifier: KWaterfallVCID) as! WaterfallVC
+            let channelvc = storyboard!.instantiateViewController(withIdentifier: KWaterfallVCID) as! WaterfallVC
             channelvc.channel = channel
             Controllers.append(channelvc)
         }

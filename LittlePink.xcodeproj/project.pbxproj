@@ -126,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				98A79D382738D90F00204DA0 /* HomeVC.swift */,
-				98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */,
 				98F25FD5273D18F800B46F02 /* views */,
 			);
 			path = Home;
@@ -144,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				98A79D3C2739106C00204DA0 /* DiscoverVC.swift */,
+				98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */,
 			);
 			name = Discover;
 			sourceTree = "<group>";

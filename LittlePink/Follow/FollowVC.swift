@@ -8,7 +8,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class FollowVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
+class FollowVC: UIViewController,IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +19,6 @@ class FollowVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
         
       return "关注"
     }
-    //添加控制前
-    override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-          let FollowVC = storyboard!.instantiateViewController(withIdentifier: KWaterfallVCID)
-          return [FollowVC]
-    }
-
     /*
     // MARK: - Navigation
 
