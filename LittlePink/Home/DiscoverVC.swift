@@ -50,9 +50,11 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
     //发现页面制作:1在storyboard添加拖入collectView类型为 ButtonBarView并且拉线并且拉线添加设置为ButtonBarView 2在storyboard添加拖入collectView并且拉线选择为containerView
     
      func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        
-      return "发现"
-    }
+         
+//         IndicatorInfo(title: "发现")
+         IndicatorInfo(title:NSLocalizedString("Discovery", comment: "首页上方的发现标签"))
+         NSLocalizedString(<#T##key: String##String#>, tableName: <#T##String?#>, bundle: <#T##Bundle#>, value: <#T##String#>, comment: <#T##String#>)
+     }
     
     //添加控制前
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

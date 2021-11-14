@@ -1,5 +1,5 @@
 //
-//  NearByVC.swift
+//  FollowVC.swift
 //  LittlePink
 //
 //  Created by 欧阳文 on 2021/11/8.
@@ -8,19 +8,18 @@
 import UIKit
 import XLPagerTabStrip
 
-class NearByVC: UIViewController,IndicatorInfoProvider {
+class FollowVC: UIViewController,IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-
-      return "附近"
+//         IndicatorInfo(title: "关注")
+         IndicatorInfo(title:NSLocalizedString("Follow", comment: "首页上方的关注标签"))
     }
-    
     /*
     // MARK: - Navigation
 
