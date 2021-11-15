@@ -20,6 +20,7 @@
 		98A79D3D2739106C00204DA0 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3C2739106C00204DA0 /* DiscoverVC.swift */; };
 		98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3E2739128700204DA0 /* NearByVC.swift */; };
 		98A79D43273914CF00204DA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D42273914CF00204DA0 /* Constants.swift */; };
+		98B160EB2742511300A4060F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98B160ED2742511300A4060F /* InfoPlist.strings */; };
 		98EA56D7273FBF0F001EA9BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98EA56D5273FBF0F001EA9BB /* Localizable.strings */; };
 		98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */; };
 		98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */; };
@@ -48,6 +49,9 @@
 		98A79D3C2739106C00204DA0 /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		98A79D3E2739128700204DA0 /* NearByVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByVC.swift; sourceTree = "<group>"; };
 		98A79D42273914CF00204DA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		98B160BF27423EB800A4060F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		98B160EC2742511300A4060F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		98B160EE2742514D00A4060F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98EA56D6273FBF0F001EA9BB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallVC.swift; sourceTree = "<group>"; };
 		98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallCell.swift; sourceTree = "<group>"; };
@@ -101,7 +105,7 @@
 				0E36A407272F97390047E368 /* LaunchScreen.storyboard */,
 				0E36A40A272F97390047E368 /* Info.plist */,
 				0E36A402272F97350047E368 /* LittlePink.xcdatamodeld */,
-				98EA56D5273FBF0F001EA9BB /* Localizable.strings */,
+				98B160EF2742590500A4060F /* Resources */,
 			);
 			path = LittlePink;
 			sourceTree = "<group>";
@@ -124,6 +128,15 @@
 				98F25FD5273D18F800B46F02 /* views */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		98B160EF2742590500A4060F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98EA56D5273FBF0F001EA9BB /* Localizable.strings */,
+				98B160ED2742511300A4060F /* InfoPlist.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		98EA56D4273FBE88001EA9BB /* Waterfall */ = {
@@ -221,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F25FDB273D208000B46F02 /* README.md in Resources */,
+				98B160EB2742511300A4060F /* InfoPlist.strings in Resources */,
 				98EA56D7273FBF0F001EA9BB /* Localizable.strings in Resources */,
 				0E36A411272F990E0047E368 /* .gitignore in Resources */,
 				0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */,
@@ -314,10 +328,20 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		98B160ED2742511300A4060F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98B160EC2742511300A4060F /* zh-Hans */,
+				98B160EE2742514D00A4060F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		98EA56D5273FBF0F001EA9BB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				98EA56D6273FBF0F001EA9BB /* zh-Hans */,
+				98B160BF27423EB800A4060F /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
