@@ -53,7 +53,6 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
          
 //         IndicatorInfo(title: "发现")
          IndicatorInfo(title:NSLocalizedString("Discovery", comment: "首页上方的发现标签"))
-         NSLocalizedString(<#T##key: String##String#>, tableName: <#T##String?#>, bundle: <#T##Bundle#>, value: <#T##String#>, comment: <#T##String#>)
      }
     
     //添加控制前
