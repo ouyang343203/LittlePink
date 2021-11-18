@@ -16,5 +16,10 @@ let KWaterfallVCID = "WaterfallVCID"
 
   // MARK: - cellID
 let KWaterfallVCCellID = "WaterfallVCCellID"
-let kwaterfallPading:CGFloat = 4 //需要引入UIKit否则不能这样使用
-let kchannels = ["推荐","旅行","娱乐","才艺","美妆","白富美","美食","萌宠"]
+let kWaterfallPading:CGFloat = 4
+
+  // MARK: -业务逻辑相关
+let kChannels = ["推荐","旅行","娱乐","才艺","美妆","白富美","美食","萌宠"]
+let kMaxPhotoCount = 9//允许最多选择上传的照片数量
+let kMaxlineCount = 4//最多列数
+let kMaxBetweenspacing = 1.0//最大间距

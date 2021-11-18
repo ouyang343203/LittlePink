@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--PostVC-->
         <scene sceneID="CoD-fb-spn">
             <objects>
-                <viewController id="d1F-Mj-3Pe" sceneMemberID="viewController">
+                <viewController id="d1F-Mj-3Pe" customClass="PostVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aIR-1X-tWf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="2187" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--PostVC-->
         <scene sceneID="cqA-1L-p6m">
             <objects>
-                <viewController id="QlU-Vf-dAA" sceneMemberID="viewController">
+                <viewController id="QlU-Vf-dAA" customClass="PostVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ppe-mP-uBv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="2187" y="1488"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--TabarVC-->
         <scene sceneID="vVR-QY-0fq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N6f-Zg-603" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N6f-Zg-603" customClass="TabarVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hiC-iD-ZNM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -350,7 +350,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart.fill" catalog="system" width="32" height="32"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>

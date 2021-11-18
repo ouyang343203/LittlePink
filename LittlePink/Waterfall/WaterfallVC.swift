@@ -20,9 +20,9 @@ class WaterfallVC: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         let layout = collectionView.collectionViewLayout as! CHTCollectionViewWaterfallLayout
         layout.columnCount = 2
-        layout.minimumColumnSpacing = kwaterfallPading
-        layout.minimumInteritemSpacing = kwaterfallPading
-        layout.sectionInset = UIEdgeInsets(top: 0, left: kwaterfallPading, bottom: kwaterfallPading, right: kwaterfallPading)
+        layout.minimumColumnSpacing = kWaterfallPading
+        layout.minimumInteritemSpacing = kWaterfallPading
+        layout.sectionInset = UIEdgeInsets(top: 0, left: kWaterfallPading, bottom: kWaterfallPading, right: kWaterfallPading)
         layout.itemRenderDirection = .leftToRight//最后一张图片所在位置设置
     }
 

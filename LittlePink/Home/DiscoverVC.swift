@@ -59,7 +59,7 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         var Controllers:[UIViewController] = []
-        for channel in kchannels{
+        for channel in kChannels{
             let channelvc = storyboard!.instantiateViewController(withIdentifier: KWaterfallVCID) as! WaterfallVC
             channelvc.channel = channel
             Controllers.append(channelvc)
