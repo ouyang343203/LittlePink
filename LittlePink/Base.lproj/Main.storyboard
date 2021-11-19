@@ -60,21 +60,21 @@
             </objects>
             <point key="canvasLocation" x="2187" y="144"/>
         </scene>
-        <!--PostVC-->
-        <scene sceneID="cqA-1L-p6m">
+        <!--public-->
+        <scene sceneID="5c6-ie-gDn">
             <objects>
-                <viewController id="QlU-Vf-dAA" customClass="PostVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ppe-mP-uBv">
+                <viewController id="rLr-oQ-ypS" customClass="PostVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3PM-jH-UIA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="8GE-7o-RgI"/>
+                        <viewLayoutGuide key="safeArea" id="Nki-JJ-XXf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lTd-nb-ckX"/>
+                    <tabBarItem key="tabBarItem" title="public" image="plus.rectangle.fill" catalog="system" selectedImage="plus.rectangle.fill" id="3KE-tQ-IcR"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VDi-RL-Ewg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gis-Bb-PlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2187" y="808"/>
+            <point key="canvasLocation" x="1280" y="802"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="S8p-7l-eyq">
@@ -106,7 +106,7 @@
                     <connections>
                         <segue destination="Nlb-vR-UMP" kind="relationship" relationship="viewControllers" id="fXz-5v-tHV"/>
                         <segue destination="8JW-ly-XAg" kind="relationship" relationship="viewControllers" id="Rbg-mx-YxD"/>
-                        <segue destination="Cd2-hO-yo2" kind="relationship" relationship="viewControllers" id="6lr-iE-7Uk"/>
+                        <segue destination="rLr-oQ-ypS" kind="relationship" relationship="viewControllers" id="bfF-Hr-F8T"/>
                         <segue destination="2c6-Lk-fkW" kind="relationship" relationship="viewControllers" id="b18-R3-MyF"/>
                         <segue destination="fVZ-xh-HEg" kind="relationship" relationship="viewControllers" id="Qmn-x3-iP8"/>
                     </connections>
@@ -310,25 +310,6 @@
             </objects>
             <point key="canvasLocation" x="1280" y="143"/>
         </scene>
-        <!--public-->
-        <scene sceneID="gfc-Su-OhF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cd2-hO-yo2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="public" image="plus.rectangle.fill" catalog="system" id="rrq-bf-fls"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2LA-h2-vdR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QlU-Vf-dAA" kind="relationship" relationship="rootViewController" id="ER9-d0-dci"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YhN-EJ-sq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1280" y="808"/>
-        </scene>
         <!--me-->
         <scene sceneID="UrE-2g-cdl">
             <objects>
@@ -350,7 +331,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart.fill" catalog="system" width="32" height="32"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>

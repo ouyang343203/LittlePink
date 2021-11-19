@@ -7,6 +7,7 @@
 
 import UIKit
 import YPImagePicker
+import AVFoundation
 
 class TabarVC: UITabBarController,UITabBarControllerDelegate {
 
@@ -19,7 +20,10 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
         
-        if  viewController.isKind(of:PostVC.self)  {
+        if  viewController is PostVC  {
+            
+            //待做登录功能
+
             var config = YPImagePickerConfiguration()
             // MARK: - 通配置
             config.isScrollToChangeModesEnabled = true  //禁止左右滑动
@@ -33,7 +37,7 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
             config.albumName = Bundle.main.appName
             config.startOnScreen = YPPickerScreen.library//设置默认打开的类型 YPPickerScreen.photo 打开拍照  YPPickerScreen.library打开相册
             config.screens = [.library, .video, .photo]//底部栏目显示条目数量
-            //config.showsCrop = .none //添加剪辑功能
+            //config.showsCrop = .none //是否提供剪辑功能
             config.targetImageSize = YPImageSize.original//显示原图
             //config.overlayView = UIView()//显层控制层面如翻转,滤镜,美颜等功能的控制层
             config.hidesBottomBar = false
@@ -62,23 +66,26 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
             config.gallery.hidesRemoveButton = false// 是否显示删除按钮只有多选的照片的时候才有效
             
             // MARK: - 视频配置
-            config.video.compression = AVAssetExportPresetHighestQuality
-            config.video.fileType = .mov
-            config.video.recordingTimeLimit = 60.0
-            config.video.libraryTimeLimit = 60.0
-            config.video.minimumTimeLimit = 3.0
-            config.video.trimmerMaxDuration = 60.0
-            config.video.trimmerMinDuration = 3.0
-            
+            //config.video.compression = AVAssetExportPresetHighestQuality//视频压缩
+            config.video.fileType = .mov//  视频压缩后的保存格式类型
+            config.video.recordingTimeLimit = kRecordingTimeLimit//拍摄视频的最大时长
+            config.video.libraryTimeLimit = KlibraryTimeLimit//从相册选取的最大视频的时长
+            config.video.minimumTimeLimit = KMinimumTimeLimit//从相册选择的最短视频时长
+            config.video.trimmerMaxDuration = KTrimmerMaxDuration//剪辑的最大视频时长
+            config.video.trimmerMinDuration = KTrimmerMinDuration//剪辑的最小视频时长
             
             let picker = YPImagePicker(configuration: config)
-            picker.didFinishPicking { [unowned picker] items, _ in
-                if let photo = items.singlePhoto {
-                    print(photo.fromCamera) // Image source (camera or library)
-                    print(photo.image) // Final image selected by the user
-                    print(photo.originalImage) // original image selected by the user, unfiltered
-//                    print(photo.modifiedImage) // Transformed image, can be nil 滤镜图片
-//                    print(photo.exifMeta) // Print exif meta data of original image.
+            picker.didFinishPicking { [unowned picker] items, cancelled in
+//                if let photo = items.singlePhoto {
+//                    print(photo.fromCamera) // Image source (camera or library)
+//                    print(photo.image) // Final image selected by the user
+//                    print(photo.originalImage) // original image selected by the user, unfiltered
+////                    print(photo.modifiedImage) // Transformed image, can be nil 滤镜图片
+////                    print(photo.exifMeta) // Print exif meta data of original image.
+//                }
+                if cancelled {
+                    print("用户点击了做上角的取消按钮")
+                    
                 }
                 picker.dismiss(animated: true, completion: nil)
             }
