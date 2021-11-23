@@ -13,9 +13,12 @@ let KFollowVCID = "FollowVCID"
 let KNearByVCID = "NearByVCID"
 let KDiscoverVCID = "DiscoverVCID"
 let KWaterfallVCID = "WaterfallVCID"
+let KNoteEditVCID = "NoteEditVCID"
 
   // MARK: - cellID
 let KWaterfallVCCellID = "WaterfallVCCellID"
+let KPhotoCellID = "PhotoCellID"
+let KPhotoFooterID = "PhotoFooterID"
 let kWaterfallPading:CGFloat = 4
 
   // MARK: -业务逻辑相关

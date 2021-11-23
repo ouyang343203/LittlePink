@@ -32,7 +32,6 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
             config.showsPhotoFilters = true//显示滤镜
             config.showsVideoTrimmer = true//打开剪辑
             config.shouldSaveNewPicturesToAlbum = true//保存到相册
-            config.albumName = "Pline"//设置相册名称
             // MARK: Bundle.main.infoDictionary 是从info里面获取  而 -Bundle.main.localizedInfoDictionary 是从国际化去的语言名称如果没有配置可能为空
             config.albumName = Bundle.main.appName
             config.startOnScreen = YPPickerScreen.library//设置默认打开的类型 YPPickerScreen.photo 打开拍照  YPPickerScreen.library打开相册

@@ -6,6 +6,38 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIView {
+    @IBInspectable var radius:CGFloat {
+        get{
+            layer.cornerRadius
+        }
+        set{
+            layer.cornerRadius = newValue
+        }
+    }
+}
+
+extension UIViewController{
+    func showTextHUD(_ title:String, _ subtitle:String? = nil){
+        
+       //提示框自动隐藏
+        
+        
+        // MARK: -  加载框自动隐藏
+        //初始化HUD窗口，并置于当前的View当中显示
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        //纯文本模式
+        hud.mode = .text
+        //设置提示文字
+        hud.label.text = title
+        //HUD窗口显示2秒后自动隐藏
+        hud.detailsLabel.text = subtitle
+        hud.hide(animated: true, afterDelay: 2)
+    }
+    
+}
 
 extension Bundle{
     var appName:String{
