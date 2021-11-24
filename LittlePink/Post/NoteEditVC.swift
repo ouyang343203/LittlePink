@@ -7,10 +7,11 @@
 
 import UIKit
 import YPImagePicker
+import SKPhotoBrowser
 
 class NoteEditVC: UIViewController {
 
-    var photos = [UIImage(named: "house_icon_group"),UIImage(named:"house_icon_group"), UIImage(named:"house_icon_group"), UIImage(named: "house_icon_group")]
+    var photos = [UIImage(named: "house_icon_group")!,UIImage(named:"house_icon_group")!, UIImage(named:"house_icon_group")!, UIImage(named: "house_icon_group")!]
     @IBOutlet weak var photoCollectView: UICollectionView!
     var photoCount :Int { photos.count }
     override func viewDidLoad() {
@@ -60,6 +61,30 @@ extension NoteEditVC:UICollectionViewDataSource {
             fatalError("获取重用视图失败!")
         }
      }
+}
+
+extension NoteEditVC:UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        var images:[SKPhoto] = []
+        for photo in photos{
+            images.append(SKPhoto.photoWithImage(photo))
+        }
+        // 2. create PhotoBrowser Instance, and present from your viewController.
+        let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
+        browser.delegate = self
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.displayDeleteButton = true
+        present(browser, animated: true, completion: {})
+    }
+}
+
+
+extension NoteEditVC:SKPhotoBrowserDelegate {
+    func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {
+        photos.remove(at: index)
+        reload()
+        photoCollectView.reloadData()
+    }
 }
 
 extension NoteEditVC{
