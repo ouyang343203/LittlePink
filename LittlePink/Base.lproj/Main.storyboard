@@ -163,6 +163,8 @@
                                                 <connections>
                                                     <outlet property="dataSource" destination="Q25-4x-17k" id="X4s-oU-6o0"/>
                                                     <outlet property="delegate" destination="Q25-4x-17k" id="Hhu-ji-mec"/>
+                                                    <outlet property="dragDelegate" destination="Q25-4x-17k" id="UGf-Pg-rYL"/>
+                                                    <outlet property="dropDelegate" destination="Q25-4x-17k" id="KW9-V3-Y69"/>
                                                 </connections>
                                             </collectionView>
                                         </subviews>

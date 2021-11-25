@@ -8,15 +8,20 @@
 import UIKit
 import YPImagePicker
 import SKPhotoBrowser
+import AVKit
 
 class NoteEditVC: UIViewController {
 
     var photos = [UIImage(named: "house_icon_group")!,UIImage(named:"house_icon_group")!, UIImage(named:"house_icon_group")!, UIImage(named: "house_icon_group")!]
     @IBOutlet weak var photoCollectView: UICollectionView!
     var photoCount :Int { photos.count }
+    //var videopath:URL = Bundle.main.url(forResource: "1637763333941326", withExtension: "mp4")! 测试地址
+    var videopath:URL?
+    var isVideo:Bool{ videopath != nil}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        photoCollectView.dragInteractionEnabled = true
         // Do any additional setup after loading the view.
     }
     
@@ -65,19 +70,30 @@ extension NoteEditVC:UICollectionViewDataSource {
 
 extension NoteEditVC:UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        var images:[SKPhoto] = []
-        for photo in photos{
-            images.append(SKPhoto.photoWithImage(photo))
+        
+        if isVideo {//视频预览需引入import AVKit
+            //定义一个视频播放器，通过本地文件路径初始化
+            let playerViewController = AVPlayerViewController()
+            //playerViewController.player = AVPlayer(url:videopath)
+            playerViewController.player = AVPlayer(url:videopath!)
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+            
+        }else{//照片预览
+            var images:[SKPhoto] = []
+            for photo in photos{
+                images.append(SKPhoto.photoWithImage(photo))
+            }
+            // 2. create PhotoBrowser Instance, and present from your viewController.
+            let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
+            browser.delegate = self
+            SKPhotoBrowserOptions.displayAction = false
+            SKPhotoBrowserOptions.displayDeleteButton = true
+            present(browser, animated: true, completion: {})
         }
-        // 2. create PhotoBrowser Instance, and present from your viewController.
-        let browser = SKPhotoBrowser(photos: images, initialPageIndex: indexPath.item)
-        browser.delegate = self
-        SKPhotoBrowserOptions.displayAction = false
-        SKPhotoBrowserOptions.displayDeleteButton = true
-        present(browser, animated: true, completion: {})
     }
 }
-
 
 extension NoteEditVC:SKPhotoBrowserDelegate {
     func removePhoto(_ browser: SKPhotoBrowser, index: Int, reload: @escaping (() -> Void)) {

@@ -18,6 +18,8 @@
 		981BA4E9274B900D00407BE7 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4E8274B900D00407BE7 /* PhotoCell.swift */; };
 		981BA4EC274BDD0E00407BE7 /* DemoEditorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4EB274BDD0E00407BE7 /* DemoEditorTest.swift */; };
 		981BA4EE274CCFB400407BE7 /* PhotoFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4ED274CCFB400407BE7 /* PhotoFooter.swift */; };
+		981BA519274E89BD00407BE7 /* 1637763333941326.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 981BA518274E851700407BE7 /* 1637763333941326.mp4 */; };
+		981BA51B274F770500407BE7 /* NoteEditVC-DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA51A274F770500407BE7 /* NoteEditVC-DragDrop.swift */; };
 		986711712743579A006758BF /* TabarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986711702743579A006758BF /* TabarVC.swift */; };
 		9867117427435967006758BF /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867117327435967006758BF /* PostVC.swift */; };
 		98996FC127454FA600396E8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98996FC027454FA500396E8E /* Extensions.swift */; };
@@ -52,6 +54,8 @@
 		981BA4EB274BDD0E00407BE7 /* DemoEditorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoEditorTest.swift; sourceTree = "<group>"; };
 		981BA4ED274CCFB400407BE7 /* PhotoFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFooter.swift; sourceTree = "<group>"; };
 		981BA4EF274D367200407BE7 /* LittlePink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LittlePink-Bridging-Header.h"; sourceTree = "<group>"; };
+		981BA518274E851700407BE7 /* 1637763333941326.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1637763333941326.mp4; sourceTree = "<group>"; };
+		981BA51A274F770500407BE7 /* NoteEditVC-DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteEditVC-DragDrop.swift"; sourceTree = "<group>"; };
 		98295EC0273E672300FE85F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		98295EC2273E675300FE85F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		986711702743579A006758BF /* TabarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarVC.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				981BA4EA274BDC9600407BE7 /* DemotestPart */,
 				98B160EF2742590500A4060F /* Resources */,
 				981BA4EF274D367200407BE7 /* LittlePink-Bridging-Header.h */,
+				981BA518274E851700407BE7 /* 1637763333941326.mp4 */,
 			);
 			path = LittlePink;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				981BA4E6274B82D800407BE7 /* NoteEditVC.swift */,
 				981BA4E8274B900D00407BE7 /* PhotoCell.swift */,
 				981BA4ED274CCFB400407BE7 /* PhotoFooter.swift */,
+				981BA51A274F770500407BE7 /* NoteEditVC-DragDrop.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				0E36A411272F990E0047E368 /* .gitignore in Resources */,
 				0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */,
 				0E36A406272F97390047E368 /* Assets.xcassets in Resources */,
+				981BA519274E89BD00407BE7 /* 1637763333941326.mp4 in Resources */,
 				0E36A401272F97350047E368 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +348,7 @@
 				0E36A3FC272F97350047E368 /* SceneDelegate.swift in Sources */,
 				98996FC127454FA600396E8E /* Extensions.swift in Sources */,
 				981BA4EC274BDD0E00407BE7 /* DemoEditorTest.swift in Sources */,
+				981BA51B274F770500407BE7 /* NoteEditVC-DragDrop.swift in Sources */,
 				0E36A404272F97350047E368 /* LittlePink.xcdatamodeld in Sources */,
 				986711712743579A006758BF /* TabarVC.swift in Sources */,
 				98A79D3B2739102600204DA0 /* FollowVC.swift in Sources */,
