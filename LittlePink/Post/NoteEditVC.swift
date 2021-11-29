@@ -75,11 +75,15 @@ class NoteEditVC: UIViewController {
         //修改光标的颜色需要修改tineColor   在调用tintColorDidChange
         textView.tintColor = UIColor(named: "main")!//颜色
         textView.tintColorDidChange()
-        if let inputAccessoryView = Bundle.main.loadNibNamed("InputAccessoryView", owner: nil, options: nil)?.first as? InputAccessoryView {
-            textView.inputAccessoryView = inputAccessoryView
-            textaccessView.doneBtn.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
-            textaccessView.maxTextCountLabel.text = "/\(KMaxNoteTextCount)"
-        }
+        
+        textView.inputAccessoryView = Bundle.loadView(fromNib: "InputAccessoryView", with: InputAccessoryView.self)
+        textaccessView.doneBtn.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        textaccessView.maxTextCountLabel.text = "/\(KMaxNoteTextCount)"
+        //        if let inputAccessoryView = Bundle.main.loadNibNamed("InputAccessoryView", owner: nil, options: nil)?.first as? InputAccessoryView {
+        //            textView.inputAccessoryView = inputAccessoryView
+        //            textaccessView.doneBtn.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
+        //            textaccessView.maxTextCountLabel.text = "/\(KMaxNoteTextCount)"
+        //        }
     }
 
     @objc override func dismissKeyboard(){
