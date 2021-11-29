@@ -34,6 +34,8 @@
 		98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */; };
 		98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */; };
 		98F25FDB273D208000B46F02 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 98F25FDA273D208000B46F02 /* README.md */; };
+		98F67D3127549F4100BBBCCB /* InputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67D3027549F4100BBBCCB /* InputAccessoryView.swift */; };
+		98F67D332754B8DA00BBBCCB /* InputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */; };
 		B3D38CE9F4B8A13286E44437 /* Pods_LittlePink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CA0333088E376A25B73CE5 /* Pods_LittlePink.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallVC.swift; sourceTree = "<group>"; };
 		98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallCell.swift; sourceTree = "<group>"; };
 		98F25FDA273D208000B46F02 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		98F67D3027549F4100BBBCCB /* InputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAccessoryView.swift; sourceTree = "<group>"; };
+		98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputAccessoryView.xib; sourceTree = "<group>"; };
 		A454DBB654BE65218EDD6D3B /* Pods-LittlePink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.release.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,10 +158,10 @@
 			children = (
 				9867117327435967006758BF /* PostVC.swift */,
 				981BA4E6274B82D800407BE7 /* NoteEditVC.swift */,
-				981BA4E8274B900D00407BE7 /* PhotoCell.swift */,
 				981BA4ED274CCFB400407BE7 /* PhotoFooter.swift */,
 				981BA51A274F770500407BE7 /* NoteEditVC-DragDrop.swift */,
 				981BA51C2752307900407BE7 /* NoteEditVC-CollectView.swift */,
+				98F67D2D27549DA000BBBCCB /* Views */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -169,7 +173,7 @@
 				98A79D3E2739128700204DA0 /* NearByVC.swift */,
 				98A79D3A2739102600204DA0 /* FollowVC.swift */,
 				98A79D3C2739106C00204DA0 /* DiscoverVC.swift */,
-				98F25FD5273D18F800B46F02 /* views */,
+				98F25FD5273D18F800B46F02 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -191,12 +195,12 @@
 			path = Waterfall;
 			sourceTree = "<group>";
 		};
-		98F25FD5273D18F800B46F02 /* views */ = {
+		98F25FD5273D18F800B46F02 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		98F25FD9273D1EDF00B46F02 /* Commom */ = {
@@ -206,6 +210,16 @@
 				98996FC027454FA500396E8E /* Extensions.swift */,
 			);
 			path = Commom;
+			sourceTree = "<group>";
+		};
+		98F67D2D27549DA000BBBCCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				98F67D3027549F4100BBBCCB /* InputAccessoryView.swift */,
+				98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */,
+				981BA4E8274B900D00407BE7 /* PhotoCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A10933AEEA0964A03BB12D10 /* Pods */ = {
@@ -279,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F25FDB273D208000B46F02 /* README.md in Resources */,
+				98F67D332754B8DA00BBBCCB /* InputAccessoryView.xib in Resources */,
 				98B160EB2742511300A4060F /* InfoPlist.strings in Resources */,
 				98EA56D7273FBF0F001EA9BB /* Localizable.strings in Resources */,
 				0E36A411272F990E0047E368 /* .gitignore in Resources */,
@@ -352,6 +367,7 @@
 				981BA51D2752307B00407BE7 /* NoteEditVC-CollectView.swift in Sources */,
 				98996FC127454FA600396E8E /* Extensions.swift in Sources */,
 				981BA4EC274BDD0E00407BE7 /* DemoEditorTest.swift in Sources */,
+				98F67D3127549F4100BBBCCB /* InputAccessoryView.swift in Sources */,
 				981BA51B274F770500407BE7 /* NoteEditVC-DragDrop.swift in Sources */,
 				0E36A404272F97350047E368 /* LittlePink.xcdatamodeld in Sources */,
 				986711712743579A006758BF /* TabarVC.swift in Sources */,

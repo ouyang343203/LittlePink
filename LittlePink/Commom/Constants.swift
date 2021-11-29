@@ -32,5 +32,5 @@ let KlibraryTimeLimit = 60.0//从相册选取的视频的时长
 let KMinimumTimeLimit = 3.0//从相册选择的最短视频时长
 let KTrimmerMaxDuration = 60.0//剪辑的最大视屏时长
 let KTrimmerMinDuration = 3.0//剪辑的最小视屏时长
-
- let KMaxNotetitleCount = 50//发布帖子时title的数量
+let KMaxNotetitleCount = 10//发布帖子时title的数量
+let KMaxNoteTextCount = 10//发布帖子时title的数量

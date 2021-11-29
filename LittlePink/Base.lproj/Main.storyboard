@@ -179,7 +179,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-r3-JFk">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" smartInsertDeleteType="no"/>
                                                                         <connections>
                                                                             <action selector="TFEdiExit:" destination="Q25-4x-17k" eventType="editingDidEndOnExit" id="po7-Bq-Yyb"/>
                                                                             <action selector="TFEditBgin:" destination="Q25-4x-17k" eventType="editingDidBegin" id="OT8-8i-LsF"/>
@@ -222,6 +222,9 @@
                                                                         <color key="value" systemColor="placeholderTextColor"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Q25-4x-17k" id="MaR-9L-gfO"/>
+                                                                </connections>
                                                             </textView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Co-QJ-Bya">
                                                                 <rect key="frame" x="0.0" y="146" width="382" height="1"/>
