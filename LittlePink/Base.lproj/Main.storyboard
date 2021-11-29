@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-Cg-tbc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-Cg-tbc">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guY-kC-TXQ">
@@ -167,11 +167,84 @@
                                                     <outlet property="dropDelegate" destination="Q25-4x-17k" id="KW9-V3-Y69"/>
                                                 </connections>
                                             </collectionView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4uy-uj-SpI">
+                                                <rect key="frame" x="16" y="121" width="382" height="201"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-Lu-XtX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="38"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Uu0-LF-hDU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="21"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-r3-JFk">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                                        <connections>
+                                                                            <action selector="TFEdiExit:" destination="Q25-4x-17k" eventType="editingDidEndOnExit" id="po7-Bq-Yyb"/>
+                                                                            <action selector="TFEditBgin:" destination="Q25-4x-17k" eventType="editingDidBegin" id="OT8-8i-LsF"/>
+                                                                            <action selector="TFEditChange:" destination="Q25-4x-17k" eventType="editingChanged" id="mAI-wn-PhQ"/>
+                                                                            <action selector="TFEditEnd:" destination="Q25-4x-17k" eventType="editingDidEnd" id="HOm-tG-f9j"/>
+                                                                            <outlet property="delegate" destination="Q25-4x-17k" id="mJ0-A8-KAy"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s85-hB-jIj">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <color key="textColor" systemColor="quaternaryLabelColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s1-vV-2wD">
+                                                                <rect key="frame" x="0.0" y="37" width="382" height="1"/>
+                                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="tKb-aC-k5O"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YHp-Nc-sNL">
+                                                        <rect key="frame" x="0.0" y="54" width="382" height="147"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2CH-fq-ftI" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="130"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="130" id="pAX-YC-B9B"/>
+                                                                </constraints>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="添加正文"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                        <color key="value" systemColor="placeholderTextColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Co-QJ-Bya">
+                                                                <rect key="frame" x="0.0" y="146" width="382" height="1"/>
+                                                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="c8m-gM-VhL"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="NBi-Lu-XtX" secondAttribute="trailing" id="eHg-37-TFo"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="e24-Dv-Lpq" firstAttribute="top" secondItem="guY-kC-TXQ" secondAttribute="top" constant="15" id="0vs-Pj-5B1"/>
                                             <constraint firstAttribute="trailing" secondItem="e24-Dv-Lpq" secondAttribute="trailing" constant="16" id="7zz-fb-jOS"/>
+                                            <constraint firstAttribute="trailing" secondItem="4uy-uj-SpI" secondAttribute="trailing" constant="16" id="VnD-Jg-aps"/>
+                                            <constraint firstItem="4uy-uj-SpI" firstAttribute="top" secondItem="e24-Dv-Lpq" secondAttribute="bottom" constant="16" id="WRf-hj-hEv"/>
+                                            <constraint firstItem="4uy-uj-SpI" firstAttribute="leading" secondItem="guY-kC-TXQ" secondAttribute="leading" constant="16" id="sdC-Ym-yLT"/>
                                             <constraint firstItem="e24-Dv-Lpq" firstAttribute="leading" secondItem="guY-kC-TXQ" secondAttribute="leading" constant="15" id="u4N-2s-vdR"/>
                                         </constraints>
                                     </view>
@@ -199,6 +272,9 @@
                     </view>
                     <connections>
                         <outlet property="photoCollectView" destination="e24-Dv-Lpq" id="bSg-uw-rsd"/>
+                        <outlet property="textView" destination="2CH-fq-ftI" id="2Ve-uJ-VFB"/>
+                        <outlet property="titleCountLabel" destination="s85-hB-jIj" id="y9e-ob-jsr"/>
+                        <outlet property="titleTF" destination="gA0-r3-JFk" id="Qn2-j0-Icu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mKV-Gf-qhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -482,6 +558,15 @@
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="tabbar_column" width="29.5" height="20"/>
         <image name="tabbar_column_selected" width="29.5" height="20"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

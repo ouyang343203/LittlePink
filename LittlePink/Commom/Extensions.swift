@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+
+extension UITextField {
+    //计算属性
+    var unwrapedText:String{ text ?? ""}
+}
+
+
 extension UIView {
     @IBInspectable var radius:CGFloat {
         get{
@@ -37,6 +44,14 @@ extension UIViewController{
         hud.hide(animated: true, afterDelay: 2)
     }
     
+    func hideKeyboardWhenTapeedAroun(){
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false//该属性的设置是为了避免类似celldelect点击无效
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
 }
 
 extension Bundle{

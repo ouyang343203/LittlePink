@@ -8,3 +8,6 @@
 # swift中使用oc包方法
 ##1情况一:直接使用oc的第三方库时pod进来后需要在 创建Bridging Heard文件取名最好是"项目名称-Bridging-Header" 然后再tagart的setting中搜索brid在Objective-C Bridging Heard中 输入"项目名称/项目名称-Bridging-Header.h"
 ##情况二:如果是直接创建oc文件会直接自动弹出让用户创建上面的文件不用在setting中在去设置
+
+##拉升优先级越高的元素不会被拉升:既hugging这个值越大就不会被拉升 (例如左边的textfield 右边一个lable textfield的hugging默认会高于lable textfield就会被拉升)
+##压缩优先级 越高的元素不会被压缩:既coppress这个值越大就不会被压缩(例如左边的textfield 右边一个lable 当textfield的内容超过自身大小的时如果lable的coppress值小于textfield的coppress会被压缩)
