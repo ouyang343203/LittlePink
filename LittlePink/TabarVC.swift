@@ -59,7 +59,7 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
             config.library.maxNumberOfItems = kMaxPhotoCount
             config.library.minNumberOfItems = 1
             config.library.numberOfItemsInRow = kMaxlineCount
-            config.library.spacingBetweenItems = kMaxBetweenspacing
+            config.library.spacingBetweenItems = CGFloat(kMaxBetweenspacing)
             config.library.skipSelectionsGallery = false//是否跳过画廊编辑页面
             //config.library.preselectedItems = nil
             config.gallery.hidesRemoveButton = false// 是否显示删除按钮只有多选的照片的时候才有效
@@ -67,11 +67,11 @@ class TabarVC: UITabBarController,UITabBarControllerDelegate {
             // MARK: - 视频配置
             //config.video.compression = AVAssetExportPresetHighestQuality//视频压缩
             config.video.fileType = .mov//  视频压缩后的保存格式类型
-            config.video.recordingTimeLimit = kRecordingTimeLimit//拍摄视频的最大时长
-            config.video.libraryTimeLimit = KlibraryTimeLimit//从相册选取的最大视频的时长
-            config.video.minimumTimeLimit = KMinimumTimeLimit//从相册选择的最短视频时长
-            config.video.trimmerMaxDuration = KTrimmerMaxDuration//剪辑的最大视频时长
-            config.video.trimmerMinDuration = KTrimmerMinDuration//剪辑的最小视频时长
+            config.video.recordingTimeLimit = TimeInterval(kRecordingTimeLimit)//拍摄视频的最大时长
+            config.video.libraryTimeLimit = TimeInterval(KlibraryTimeLimit)//从相册选取的最大视频的时长
+            config.video.minimumTimeLimit = TimeInterval(KMinimumTimeLimit)//从相册选择的最短视频时长
+            config.video.trimmerMaxDuration = Double(KTrimmerMaxDuration)//剪辑的最大视频时长
+            config.video.trimmerMinDuration = Double(KTrimmerMinDuration)//剪辑的最小视频时长
             
             let picker = YPImagePicker(configuration: config)
             picker.didFinishPicking { [unowned picker] items, cancelled in

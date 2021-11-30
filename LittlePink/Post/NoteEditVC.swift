@@ -73,7 +73,7 @@ class NoteEditVC: UIViewController {
         paragraphStyle.lineSpacing = 6 //设置的事行间距
         textView.typingAttributes = [NSAttributedString.Key.paragraphStyle:paragraphStyle,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 14),NSAttributedString.Key.foregroundColor:UIColor.secondaryLabel]
         //修改光标的颜色需要修改tineColor   在调用tintColorDidChange
-        textView.tintColor = UIColor(named: "main")!//颜色
+        textView.tintColor = mainColor//颜色
         textView.tintColorDidChange()
         
         textView.inputAccessoryView = Bundle.loadView(fromNib: "InputAccessoryView", with: InputAccessoryView.self)

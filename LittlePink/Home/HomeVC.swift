@@ -21,7 +21,7 @@ class HomeVC:ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
   // MARK: - 设置上方的导航bar
         //1 设置seledtbar--按钮下方下方线条
-        settings.style.selectedBarBackgroundColor = UIColor(named: "main")!//颜色
+        settings.style.selectedBarBackgroundColor = mainColor//颜色
         settings.style.selectedBarHeight = 3//高度
          
         //2 ButtonBarP--设置文本或图片的按钮

@@ -105,7 +105,7 @@ extension NoteEditVC{
             config.library.maxNumberOfItems = kMaxPhotoCount - photoCount
             config.library.minNumberOfItems = 1
             config.library.numberOfItemsInRow = kMaxlineCount
-            config.library.spacingBetweenItems = kMaxBetweenspacing
+            config.library.spacingBetweenItems = CGFloat(kMaxBetweenspacing)
             config.library.skipSelectionsGallery = false//是否跳过画廊编辑页面
             config.gallery.hidesRemoveButton = false// 是否显示删除按钮只有多选的照片的时候才有效
             

@@ -1,20 +1,19 @@
 //
-//  DiscoverVC.swift
+//  ChannelVC.swift
 //  LittlePink
 //
-//  Created by 欧阳文 on 2021/11/8.
+//  Created by 欧阳文 on 2021/11/30.
 //
 
 import UIKit
 import XLPagerTabStrip
 
-class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
+class ChannelVC: ButtonBarPagerTabStripViewController {
 
     override func viewDidLoad() {
-        
         //1 设置seledtbar--按钮下方下方线条
         settings.style.selectedBarBackgroundColor = mainColor//颜色
-        settings.style.selectedBarHeight = 0//高度
+        settings.style.selectedBarHeight = 1//高度
          
         //2 ButtonBarP--设置文本或图片的按钮
         settings.style.buttonBarItemBackgroundColor = .clear//设置bar的背景颜色
@@ -25,6 +24,8 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
         settings.style.buttonBarRightContentInset = 16//距离View右边间距
         
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         containerView.bounces = false//设置禁止又回弹的效果 containerViev storyboard上的scrollcView
         //设置选中和未选中的buttonBarItemtitle颜色
         changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
@@ -43,24 +44,17 @@ class DiscoverVC: ButtonBarPagerTabStripViewController,IndicatorInfoProvider {
                 oldCell?.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }
         }
-
-        // Do any additional setup after loading the view.
+        
     }
-    
-    //发现页面制作:1在storyboard添加拖入collectView类型为 ButtonBarView并且拉线并且拉线添加设置为ButtonBarView 2在storyboard添加拖入collectView并且拉线选择为containerView
-     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-         
-//         IndicatorInfo(title: "发现")
-         IndicatorInfo(title:NSLocalizedString("Discovery", comment: "首页上方的发现标签"))
-     }
     
     //添加控制前
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         var Controllers:[UIViewController] = []
-        for channel in kChannels{
-            let channelvc = storyboard!.instantiateViewController(withIdentifier: KWaterfallVCID) as! WaterfallVC
-            channelvc.channel = channel
+        for channel in kChannels.indices{
+            let channelvc = storyboard!.instantiateViewController(withIdentifier: KChannelItemVCID) as! ChannelItemVC
+            channelvc.channel = kChannels[channel]
+            channelvc.sunchannels = kAllSubChannels[channel]
             Controllers.append(channelvc)
         }
           return Controllers
