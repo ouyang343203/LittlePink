@@ -577,7 +577,7 @@
         <!--TabarVC-->
         <scene sceneID="vVR-QY-0fq">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N6f-Zg-603" customClass="TabarVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabarVCID" automaticallyAdjustsScrollViewInsets="NO" id="N6f-Zg-603" customClass="TabarVC" customModule="LittlePink" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hiC-iD-ZNM">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
