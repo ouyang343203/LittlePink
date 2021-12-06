@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+  // MARK: - 高德key
+let KGaodekey = "7ab66ca2e7057ade7e45057aa5a61ec0"
+
   // MARK: - StoryboardID
 let KFollowVCID = "FollowVCID"
 let KNearByVCID = "NearByVCID"

@@ -11,10 +11,9 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        confing()
         return true
     }
 
@@ -79,3 +78,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate{
+    
+    private func confing() {
+        /*
+         * 调用隐私合规处理方法
+         */
+        AMapLocationManager.updatePrivacyAgree(AMapPrivacyAgreeStatus.didAgree)
+        AMapLocationManager.updatePrivacyShow(AMapPrivacyShowStatus.didShow, privacyInfo: AMapPrivacyInfoStatus.didContain)
+        AMapServices.shared().enableHTTPS = true
+        AMapServices.shared().apiKey = KGaodekey
+    }
+}
+ 

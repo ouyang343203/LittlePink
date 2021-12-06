@@ -9,15 +9,21 @@ import UIKit
 
 class NoteEditVC: UIViewController {
 
-    var photos = [UIImage(named: "house_icon_group")!,UIImage(named:"house_icon_group")!, UIImage(named:"house_icon_group")!, UIImage(named: "house_icon_group")!]
+    let locationManager = CLLocationManager()
     @IBOutlet weak var photoCollectView: UICollectionView!
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var titleCountLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var chnnelIcon: UIImageView!
+    @IBOutlet weak var chnnelLabel: UILabel!
+    @IBOutlet weak var chnnelPlaceholderLabel: UILabel!
     
+    var photos = [UIImage(named: "house_icon_group")!,UIImage(named:"house_icon_group")!, UIImage(named:"house_icon_group")!, UIImage(named: "house_icon_group")!]
     var photoCount :Int { photos.count }
     //var videopath:URL = Bundle.main.url(forResource: "1637763333941326", withExtension: "mp4")! 测试地址
     var videopath:URL?
+    var channel = ""
+    var subchannel = ""
     var isVideo:Bool{ videopath != nil}
     var textaccessView:InputAccessoryView {textView.inputAccessoryView as! InputAccessoryView}
     
@@ -84,8 +90,16 @@ class NoteEditVC: UIViewController {
         //            textaccessView.doneBtn.addTarget(self, action: #selector(dismissKeyboard), for: .touchUpInside)
         //            textaccessView.maxTextCountLabel.text = "/\(KMaxNoteTextCount)"
         //        }
+        locationManager.requestWhenInUseAuthorization()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if  let channelVC = segue.destination as? ChannelVC{
+            channelVC.PVDelegate = self
+        }
+    }
+    
     @objc override func dismissKeyboard(){
         
         textView.resignFirstResponder()
@@ -125,5 +139,20 @@ extension NoteEditVC:UITextViewDelegate {
         // MARK: - 使用搜狗拼音的时候使用 注意防止粘贴的时候有空格可以在storyboard 中设置Smart Insert 属性为NO
         guard textView.markedTextRange == nil else{ return}//处于高亮编辑状态的时候不进行计数
         textaccessView.currentCount = textView.text.count
+    }
+}
+
+
+extension NoteEditVC:ChannelVCDelegate {
+    
+    func updateChannel(channel:String, sunbchannel:String){
+        self.channel = channel
+        self.subchannel = sunbchannel
+        self.chnnelIcon.tintColor = .systemBlue
+        
+        self.chnnelLabel.text = channel
+        self.chnnelLabel.tintColor = .systemBlue
+        
+        self.chnnelPlaceholderLabel.isHidden = true
     }
 }

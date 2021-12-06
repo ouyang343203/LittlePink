@@ -44,7 +44,12 @@ class ChannelItemVC: UITableViewController {
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+        let channelVC = parent as! ChannelVC
+        channelVC.PVDelegate?.updateChannel(channel:channel, sunbchannel: sunchannels[indexPath.row])
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

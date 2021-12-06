@@ -10,10 +10,12 @@ import XLPagerTabStrip
 
 class ChannelVC: ButtonBarPagerTabStripViewController {
 
+    var PVDelegate:ChannelVCDelegate?
     override func viewDidLoad() {
+    
         //1 设置seledtbar--按钮下方下方线条
         settings.style.selectedBarBackgroundColor = mainColor//颜色
-        settings.style.selectedBarHeight = 1//高度
+        settings.style.selectedBarHeight = 2//高度
          
         //2 ButtonBarP--设置文本或图片的按钮
         settings.style.buttonBarItemBackgroundColor = .clear//设置bar的背景颜色

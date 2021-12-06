@@ -23,6 +23,7 @@
 		981BA51D2752307B00407BE7 /* NoteEditVC-CollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA51C2752307900407BE7 /* NoteEditVC-CollectView.swift */; };
 		986711712743579A006758BF /* TabarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986711702743579A006758BF /* TabarVC.swift */; };
 		9867117427435967006758BF /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867117327435967006758BF /* PostVC.swift */; };
+		9881139D275A07DA0014B67F /* PoiSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881139C275A07DA0014B67F /* PoiSearchVC.swift */; };
 		98996FC127454FA600396E8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98996FC027454FA500396E8E /* Extensions.swift */; };
 		98A79D392738D90F00204DA0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D382738D90F00204DA0 /* HomeVC.swift */; };
 		98A79D3B2739102600204DA0 /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3A2739102600204DA0 /* FollowVC.swift */; };
@@ -38,6 +39,7 @@
 		98F67D332754B8DA00BBBCCB /* InputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */; };
 		98F67D352756051800BBBCCB /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67D342756051800BBBCCB /* ChannelVC.swift */; };
 		98F67D3727560C3400BBBCCB /* ChannelItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67D3627560C3400BBBCCB /* ChannelItemVC.swift */; };
+		98F67D5F2758C35C00BBBCCB /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F67D5E2758C35C00BBBCCB /* Protocols.swift */; };
 		B3D38CE9F4B8A13286E44437 /* Pods_LittlePink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CA0333088E376A25B73CE5 /* Pods_LittlePink.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,7 @@
 		98295EC2273E675300FE85F1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		986711702743579A006758BF /* TabarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabarVC.swift; sourceTree = "<group>"; };
 		9867117327435967006758BF /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
+		9881139C275A07DA0014B67F /* PoiSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiSearchVC.swift; sourceTree = "<group>"; };
 		98996FC027454FA500396E8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		98A79D382738D90F00204DA0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		98A79D3A2739102600204DA0 /* FollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputAccessoryView.xib; sourceTree = "<group>"; };
 		98F67D342756051800BBBCCB /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		98F67D3627560C3400BBBCCB /* ChannelItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItemVC.swift; sourceTree = "<group>"; };
+		98F67D5E2758C35C00BBBCCB /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A454DBB654BE65218EDD6D3B /* Pods-LittlePink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.release.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +171,8 @@
 				981BA51C2752307900407BE7 /* NoteEditVC-CollectView.swift */,
 				98F67D342756051800BBBCCB /* ChannelVC.swift */,
 				98F67D3627560C3400BBBCCB /* ChannelItemVC.swift */,
+				98F67D5E2758C35C00BBBCCB /* Protocols.swift */,
+				9881139C275A07DA0014B67F /* PoiSearchVC.swift */,
 				98F67D2D27549DA000BBBCCB /* Views */,
 			);
 			path = Post;
@@ -360,7 +366,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				981BA4EE274CCFB400407BE7 /* PhotoFooter.swift in Sources */,
+				98F67D5F2758C35C00BBBCCB /* Protocols.swift in Sources */,
 				98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */,
+				9881139D275A07DA0014B67F /* PoiSearchVC.swift in Sources */,
 				981BA4E9274B900D00407BE7 /* PhotoCell.swift in Sources */,
 				98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */,
 				98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */,
@@ -556,7 +564,12 @@
 				DEVELOPMENT_TEAM = 4ZPFWZ992X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
+				INFOPLIST_KEY_CFBundleDisplayName = Pink;
+				INFOPLIST_KEY_NSCameraUsageDescription = "打开后才能拍色照片和视频哦!";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "打开可获取周边位置信息";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "打开后可录制视频声音!";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "打开后可选存储照片!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "打开后可选择照片和视频!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -568,7 +581,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mdwork.www.LittlePink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.officialDemoLoc11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "LittlePink/LittlePink-Bridging-Header.h";
@@ -588,7 +601,12 @@
 				DEVELOPMENT_TEAM = 4ZPFWZ992X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "小粉书";
+				INFOPLIST_KEY_CFBundleDisplayName = Pink;
+				INFOPLIST_KEY_NSCameraUsageDescription = "打开后才能拍色照片和视频哦!";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "打开可获取周边位置信息";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "打开后可录制视频声音!";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "打开后可选存储照片!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "打开后可选择照片和视频!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -600,7 +618,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mdwork.www.LittlePink;
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.officialDemoLoc11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "LittlePink/LittlePink-Bridging-Header.h";
