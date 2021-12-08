@@ -12,4 +12,6 @@ platform :ios,'9.0'
   pod 'SKPhotoBrowser'
   pod 'KMPlaceholderTextView', '~> 1.4.0'# 用户显示TextView提示文字框架
   pod 'AMapLocation'
+  pod 'AMapSearch'
+  
 end

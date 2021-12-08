@@ -25,6 +25,7 @@ let KWaterfallVCCellID = "WaterfallVCCellID"
 let KPhotoCellID = "PhotoCellID"
 let KPhotoFooterID = "PhotoFooterID"
 let KSunchannellID = "SunchannellID"
+let KPOICellID = "POICellID"
 let kWaterfallPading:CGFloat = 4
 
   // MARK: - 主题颜色

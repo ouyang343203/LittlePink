@@ -31,6 +31,8 @@
 		98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D3E2739128700204DA0 /* NearByVC.swift */; };
 		98A79D43273914CF00204DA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A79D42273914CF00204DA0 /* Constants.swift */; };
 		98B160EB2742511300A4060F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98B160ED2742511300A4060F /* InfoPlist.strings */; };
+		98C045E8275F1BC3001CDF84 /* POICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C045E7275F1BC3001CDF84 /* POICell.swift */; };
+		98C045EC275F3C10001CDF84 /* PoiSearchVC-Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C045EB275F3C10001CDF84 /* PoiSearchVC-Config.swift */; };
 		98EA56D7273FBF0F001EA9BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98EA56D5273FBF0F001EA9BB /* Localizable.strings */; };
 		98EE4E9B273CC1E200F24026 /* WaterfallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */; };
 		98F25FD4273CD0C200B46F02 /* WaterfallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */; };
@@ -78,6 +80,8 @@
 		98B160BF27423EB800A4060F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		98B160EC2742511300A4060F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		98B160EE2742514D00A4060F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		98C045E7275F1BC3001CDF84 /* POICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POICell.swift; sourceTree = "<group>"; };
+		98C045EB275F3C10001CDF84 /* PoiSearchVC-Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PoiSearchVC-Config.swift"; sourceTree = "<group>"; };
 		98EA56D6273FBF0F001EA9BB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		98EE4E9A273CC1E200F24026 /* WaterfallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallVC.swift; sourceTree = "<group>"; };
 		98F25FD3273CD0C200B46F02 /* WaterfallCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallCell.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				98F67D3627560C3400BBBCCB /* ChannelItemVC.swift */,
 				98F67D5E2758C35C00BBBCCB /* Protocols.swift */,
 				9881139C275A07DA0014B67F /* PoiSearchVC.swift */,
+				98C045EB275F3C10001CDF84 /* PoiSearchVC-Config.swift */,
 				98F67D2D27549DA000BBBCCB /* Views */,
 			);
 			path = Post;
@@ -230,6 +235,7 @@
 				98F67D3027549F4100BBBCCB /* InputAccessoryView.swift */,
 				98F67D322754B8DA00BBBCCB /* InputAccessoryView.xib */,
 				981BA4E8274B900D00407BE7 /* PhotoCell.swift */,
+				98C045E7275F1BC3001CDF84 /* POICell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C045E8275F1BC3001CDF84 /* POICell.swift in Sources */,
 				981BA4EE274CCFB400407BE7 /* PhotoFooter.swift in Sources */,
 				98F67D5F2758C35C00BBBCCB /* Protocols.swift in Sources */,
 				98A79D3F2739128700204DA0 /* NearByVC.swift in Sources */,
@@ -377,6 +384,7 @@
 				98A79D392738D90F00204DA0 /* HomeVC.swift in Sources */,
 				0E36A3FA272F97350047E368 /* AppDelegate.swift in Sources */,
 				982D4175275DCA0600EDC5B2 /* AMapPrivacyUtility.swift in Sources */,
+				98C045EC275F3C10001CDF84 /* PoiSearchVC-Config.swift in Sources */,
 				9867117427435967006758BF /* PostVC.swift in Sources */,
 				981BA51D2752307B00407BE7 /* NoteEditVC-CollectView.swift in Sources */,
 				98996FC127454FA600396E8E /* Extensions.swift in Sources */,

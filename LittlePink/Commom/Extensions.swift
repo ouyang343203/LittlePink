@@ -7,7 +7,13 @@
 
 import Foundation
 import UIKit
+import MBProgressHUD
 
+//  设置属性是空的情况
+extension  Optional where Wrapped == String  {
+    //计算属性
+    var unwrapedText:String{ self ?? ""}
+}
 
 extension UITextField {
     //计算属性
@@ -27,6 +33,23 @@ extension UIView {
 }
 
 extension UIViewController{
+    
+      // MARK: - 加载提示框
+    func showLoatHUD(_ title:String? = nil){
+     
+        DispatchQueue.main.async {
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.label.text = title
+        }
+    }
+   
+    func hidLoadHUD() {
+        
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+        }
+    }
+    
     func showTextHUD(_ title:String, _ subtitle:String? = nil){
         
        //提示框自动隐藏

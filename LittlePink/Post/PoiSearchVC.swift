@@ -9,48 +9,29 @@ import UIKit
 
 class PoiSearchVC: UIViewController {
 
-    let locationManager = AMapLocationManager()
+    @IBOutlet weak var poitableView: UITableView!
+    lazy var locationManager = AMapLocationManager()
+    lazy var mapSearch = AMapSearchAPI()
+    lazy var aroundSearchrequest:AMapPOIAroundSearchRequest = {
+        
+        let request = AMapPOIAroundSearchRequest()
+        request.location = AMapGeoPoint.location(withLatitude: CGFloat(latitude), longitude: CGFloat(longitude))
+        request.requireExtension = true
+        return request
+    }()
+    
+    var latitude = 0.0
+    var longitude = 0.0
+
+   // private var pois = [Array(repeating: "", count: 2)]//定义只有两个元素的嵌套数组定义
+    var pois = [["不显示位置",""]]//定义有默认值的嵌套数组
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters//设置精度
-        locationManager.locationTimeout = 5//设置超时时间
-        locationManager.reGeocodeTimeout = 5
-        //locationManager.delegate = self
-        locationManager.requestLocation(withReGeocode: true, completionBlock: { [weak self] (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
-                    
-            if let error = error {
-                let error = error as NSError
-                
-                if error.code == AMapLocationErrorCode.locateFailed.rawValue {
-                    //定位错误：此时location和regeocode没有返回值，不进行annotation的添加
-                     print("定位错误:{\(error.code) - \(error.localizedDescription)};")
-                    return
-                }
-                else if error.code == AMapLocationErrorCode.reGeocodeFailed.rawValue
-                    || error.code == AMapLocationErrorCode.timeOut.rawValue
-                    || error.code == AMapLocationErrorCode.cannotFindHost.rawValue
-                    || error.code == AMapLocationErrorCode.badURL.rawValue
-                    || error.code == AMapLocationErrorCode.notConnectedToInternet.rawValue
-                    || error.code == AMapLocationErrorCode.cannotConnectToHost.rawValue {
-                    
-                    //逆地理错误：在带逆地理的单次定位中，逆地理过程可能发生错误，此时location有返回值，regeocode无返回值，进行annotation的添加
-                    print("逆地理错误:{\(error.code) - \(error.localizedDescription)};")
-                }
-                else {
-                    //没有错误：location有返回值，regeocode是否有返回值取决于是否进行逆地理操作，进行annotation的添加
-                }
-            }
-            
-            if let location = location {
-                print("location:%@", location)
-            }
-            
-            if let reGeocode = reGeocode {
-                print("reGeocode:%@", reGeocode)
-            }
-        })
+        config()//定位配置
+        requstlocationData()//请求当前定位信息
+        mapSearch?.delegate = self
     }
     
     /*
@@ -62,16 +43,18 @@ class PoiSearchVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension PoiSearchVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        pois.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: KPOICellID, for: indexPath) as! POICell
+        cell.poiInfos = pois[indexPath.row]
+        return cell
     }
 }
 
@@ -85,7 +68,6 @@ extension PoiSearchVC:UISearchBarDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
         
     }
-
 }
 
 extension PoiSearchVC:AMapLocationManagerDelegate{
@@ -94,3 +76,20 @@ extension PoiSearchVC:AMapLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
     }
 }
+  // MARK: -  周边搜索
+extension PoiSearchVC:AMapSearchDelegate {
+    func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+        hidLoadHUD()
+        if response.count == 0 { return }
+        for poi in response.pois {
+            let province = poi.province == poi.city ? "不显示位置" : poi.province.unwrapedText
+            let address = poi.district == poi.address ? "" : poi.address
+            let detileaddress = "\(province)\(poi.city.unwrapedText)\(poi.district.unwrapedText)\(address.unwrapedText)"
+            print("详细地址:\(detileaddress)")
+            let poi = [province,detileaddress]
+            pois.append(poi)
+            poitableView.reloadData()
+        }
+    }
+}
+
