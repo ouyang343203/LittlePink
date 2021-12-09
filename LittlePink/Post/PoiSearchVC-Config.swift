@@ -48,6 +48,7 @@ extension PoiSearchVC {
                 // {formattedAddress:广东省深圳市罗湖区建设路靠近新都酒店; country:中国;province:广东省; city:深圳市; district:罗湖区; citycode:0755; adcode:440303; street:建设路; number:1079号; POIName:新都酒店; AOIName:深圳站;}
                 // {formattedAddress:上海市宝山区富长路靠近外环富长路桥; country:中国;province:上海市; city:上海市; district:宝山区; citycode:021; adcode:310113; street:富长路; number:1118号; POIName:外环富长路桥; AOIName:(null);}
                 // {formattedAddress:西藏自治区日喀则市仲巴县; country:中国;province:西藏自治区; city:日喀则市; district:仲巴县; citycode:0892; adcode:540232; street:(null); number:(null); POIName:(null); AOIName:(null);}
+                
             }
             
             if let location = location {
