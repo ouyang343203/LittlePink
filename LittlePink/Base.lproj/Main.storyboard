@@ -416,9 +416,9 @@
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="搜索地点" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VJx-H4-dnn">
                                 <rect key="frame" x="16" y="44" width="382" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="GjM-WI-z3Q" id="UFD-Kd-YlQ"/>
+                                    <outlet property="delegate" destination="GjM-WI-z3Q" id="wAF-aI-CXo"/>
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5d-Zl-7BO">
@@ -494,6 +494,7 @@
                     </view>
                     <connections>
                         <outlet property="poitableView" destination="9VZ-sP-QKF" id="dsF-Lx-6lL"/>
+                        <outlet property="searchBar" destination="VJx-H4-dnn" id="bYL-xJ-Jq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6g-vE-Vgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

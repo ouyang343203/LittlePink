@@ -56,7 +56,7 @@ extension PoiSearchVC {
                 // MARK: -检索开始周边POI搜索在代理AMapSearchDelegate处理
                 weakself.latitude = location.coordinate.latitude
                 weakself.longitude = location.coordinate.longitude
-                weakself.mapSearch?.aMapPOIAroundSearch(weakself.aroundSearchrequest)
+                weakself.mapSearch?.aMapPOIAroundSearch(weakself.aroundSearchRequest)//根据定位经纬度获取周边搜索信息
             }
         
             if let reGeocode = reGeocode {
@@ -66,6 +66,7 @@ extension PoiSearchVC {
                 let currentPOI = [province,"\(province)\(reGeocode.city.unwrapedText )\(reGeocode.district.unwrapedText)\(reGeocode.street.unwrapedText)\(reGeocode.number.unwrapedText)"]
 
                 weakself.pois.append(currentPOI)
+                weakself.arouSearchndpois.append(currentPOI)//将第一次获取的到周边信息存储到副本中当清除所有的关键字时默认让列表展示周边的搜索的列表数据
                 DispatchQueue.main.async {
                     weakself.poitableView.reloadData()
                 }

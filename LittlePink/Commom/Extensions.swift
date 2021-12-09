@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 import MBProgressHUD
 
+extension String {
+    var isBlank:Bool {
+        self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+}
+
 //  设置属性是空的情况
 extension  Optional where Wrapped == String  {
     //计算属性

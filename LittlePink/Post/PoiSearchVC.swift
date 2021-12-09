@@ -9,10 +9,12 @@ import UIKit
 
 class PoiSearchVC: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var poitableView: UITableView!
     lazy var locationManager = AMapLocationManager()
     lazy var mapSearch = AMapSearchAPI()
-    lazy var aroundSearchrequest:AMapPOIAroundSearchRequest = {
+    
+    lazy var aroundSearchRequest:AMapPOIAroundSearchRequest = {//设置POI搜索
         
         let request = AMapPOIAroundSearchRequest()
         request.location = AMapGeoPoint.location(withLatitude: CGFloat(latitude), longitude: CGFloat(longitude))
@@ -20,17 +22,26 @@ class PoiSearchVC: UIViewController {
         return request
     }()
     
+    lazy var keywordsSearchRequest:AMapPOIKeywordsSearchRequest = {//设置关键字搜索
+        
+        let request = AMapPOIKeywordsSearchRequest()
+        request.keywords = keywords
+        request.requireExtension = true
+        return request
+    }()
+    
     var latitude = 0.0
     var longitude = 0.0
-
+    var keywords = ""
    // private var pois = [Array(repeating: "", count: 2)]//定义只有两个元素的嵌套数组定义
-    var pois = [["不显示位置",""]]//定义有默认值的嵌套数组
+    var pois = KPOIInitArray//定义有默认值的嵌套数组
+    var arouSearchndpois = KPOIInitArray//定义有默认值的嵌套数组
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         config()//定位配置
-        requstlocationData()//请求当前定位信息
+        requstlocationData()// 获取当前定位的位置周边的信息
         mapSearch?.delegate = self
     }
     
@@ -63,10 +74,31 @@ extension PoiSearchVC:UITableViewDelegate {
     
 }
 
+extension PoiSearchVC:UIScrollViewDelegate {
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView){
+        searchBar.resignFirstResponder()
+    }
+}
+
 extension PoiSearchVC:UISearchBarDelegate{
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { dismiss(animated: true, completion: nil)}
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
+        if searchText.isBlank {
+            pois = arouSearchndpois
+            poitableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, !searchText.isBlank else { return }
+            pois.removeAll()
+            showLoatHUD()
+            keywordsSearchRequest.keywords = searchText
+            mapSearch?.aMapPOIKeywordsSearch(keywordsSearchRequest)
     }
 }
 
@@ -76,7 +108,7 @@ extension PoiSearchVC:AMapLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
     }
 }
-  // MARK: -  周边搜索
+  // MARK: -  根据定位经纬度获取周边搜索信息
 extension PoiSearchVC:AMapSearchDelegate {
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         hidLoadHUD()
@@ -88,8 +120,14 @@ extension PoiSearchVC:AMapSearchDelegate {
             print("详细地址:\(detileaddress)")
             let poi = [province,detileaddress]
             pois.append(poi)
+            
+            if request is AMapPOIAroundSearchRequest {
+                arouSearchndpois.append(poi)
+            }
             poitableView.reloadData()
         }
     }
 }
+
+
 
