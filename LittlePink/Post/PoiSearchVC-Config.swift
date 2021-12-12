@@ -14,6 +14,8 @@ extension PoiSearchVC {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters//设置精度
         locationManager.locationTimeout = 5//设置超时时间
         locationManager.reGeocodeTimeout = 5
+        poitableView.mj_footer = mjfooter
+    
     }
     
     func requstlocationData(){
@@ -52,12 +54,12 @@ extension PoiSearchVC {
             }
             
             if let location = location {
-                print("经纬度地址:%@", location)
                 
-                // MARK: -检索开始周边POI搜索在代理AMapSearchDelegate处理
+                // MARK: -搜索周边POI搜索在代理AMapSearchDelegate处理
                 weakself.latitude = location.coordinate.latitude
                 weakself.longitude = location.coordinate.longitude
-                weakself.mapSearch?.aMapPOIAroundSearch(weakself.aroundSearchRequest)//根据定位经纬度获取周边搜索信息
+                weakself.makeArountsearch()
+                weakself.mjfooter.setRefreshingTarget(weakself, refreshingAction: #selector(weakself.aroundSearchPullToRefresh))
             }
         
             if let reGeocode = reGeocode {
@@ -75,5 +77,28 @@ extension PoiSearchVC {
             }
         })
         
+    }
+}
+
+extension PoiSearchVC {
+    
+    func makeArountsearch(_ page:Int = 1) {
+
+        aroundSearchRequest.page = page
+        mapSearch?.aMapPOIAroundSearch(aroundSearchRequest)//根据定位经纬度获取周边搜索信息
+    }
+}
+
+extension PoiSearchVC {
+    
+  @objc func aroundSearchPullToRefresh(){
+      
+      currentPage += 1
+      makeArountsearch(currentPage)
+      if currentPage < pageCount{
+          mjfooter.endRefreshing()
+      }else{
+          mjfooter.endRefreshingWithNoMoreData()
+      }
     }
 }

@@ -14,28 +14,36 @@ class PoiSearchVC: UIViewController {
     lazy var locationManager = AMapLocationManager()
     lazy var mapSearch = AMapSearchAPI()
     
-    lazy var aroundSearchRequest:AMapPOIAroundSearchRequest = {//设置POI搜索
+    //设置POI搜索
+    lazy var aroundSearchRequest:AMapPOIAroundSearchRequest = {
         
         let request = AMapPOIAroundSearchRequest()
+        request.types = KPOITypes
         request.location = AMapGeoPoint.location(withLatitude: CGFloat(latitude), longitude: CGFloat(longitude))
+        request.offset = kMaPagesize
         request.requireExtension = true
         return request
     }()
     
-    lazy var keywordsSearchRequest:AMapPOIKeywordsSearchRequest = {//设置关键字搜索
+    //设置关键字搜索
+    lazy var keywordsSearchRequest:AMapPOIKeywordsSearchRequest = {
         
         let request = AMapPOIKeywordsSearchRequest()
-        request.keywords = keywords
+        request.offset = kMaPagesize
         request.requireExtension = true
         return request
     }()
+    lazy var mjfooter = MJRefreshAutoNormalFooter()
     
     var latitude = 0.0
     var longitude = 0.0
     var keywords = ""
+    var currentPage = 1
+    var pageCount = 1
    // private var pois = [Array(repeating: "", count: 2)]//定义只有两个元素的嵌套数组定义
     var pois = KPOIInitArray//定义有默认值的嵌套数组
     var arouSearchndpois = KPOIInitArray//定义有默认值的嵌套数组
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -92,13 +100,14 @@ extension PoiSearchVC:UISearchBarDelegate{
             poitableView.reloadData()
         }
     }
-    
+    //点击搜索
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isBlank else { return }
-            pois.removeAll()
-            showLoatHUD()
-            keywordsSearchRequest.keywords = searchText
-            mapSearch?.aMapPOIKeywordsSearch(keywordsSearchRequest)
+        pois.removeAll()
+        showLoatHUD()
+        keywords = searchText
+        keywordsSearchRequest.keywords = keywords
+        mapSearch?.aMapPOIKeywordsSearch(keywordsSearchRequest)
     }
 }
 
@@ -112,7 +121,14 @@ extension PoiSearchVC:AMapLocationManagerDelegate{
 extension PoiSearchVC:AMapSearchDelegate {
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         hidLoadHUD()
-        if response.count == 0 { return }
+        let poicount = response.count
+        if poicount > kMaPagesize  {//总数据大于当前页码数量时页码+1表示还有下一页
+            pageCount = poicount/kMaPagesize + 1
+        }else{
+            mjfooter.endRefreshingWithNoMoreData()
+        }
+        
+        if poicount == 0 { return }
         for poi in response.pois {
             let province = poi.province == poi.city ? "不显示位置" : poi.province.unwrapedText
             let address = poi.district == poi.address ? "" : poi.address
@@ -121,10 +137,11 @@ extension PoiSearchVC:AMapSearchDelegate {
             let poi = [province,detileaddress]
             pois.append(poi)
             
+            // 第一次定位以后的周边搜索的数据副本存储
             if request is AMapPOIAroundSearchRequest {
                 arouSearchndpois.append(poi)
             }
-            poitableView.reloadData()
+           poitableView.reloadData()
         }
     }
 }

@@ -7,6 +7,7 @@ PODS:
   - CHTCollectionViewWaterfallLayout/Swift (0.9.8)
   - KMPlaceholderTextView (1.4.0)
   - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
   - PryntTrimmerView (4.0.2)
   - SKPhotoBrowser (7.0.0)
   - SteviaLayout (4.7.3)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - CHTCollectionViewWaterfallLayout/Swift
   - KMPlaceholderTextView (~> 1.4.0)
   - MBProgressHUD (~> 1.2.0)
+  - MJRefresh
   - SKPhotoBrowser
   - XLPagerTabStrip (~> 8.1.0)
   - YPImagePicker
@@ -33,6 +35,7 @@ SPEC REPOS:
     - CHTCollectionViewWaterfallLayout
     - KMPlaceholderTextView
     - MBProgressHUD
+    - MJRefresh
     - PryntTrimmerView
     - SKPhotoBrowser
     - SteviaLayout
@@ -46,12 +49,13 @@ SPEC CHECKSUMS:
   CHTCollectionViewWaterfallLayout: 5f241d2480ab4939aa0d1ad4981de9eef1fbe60d
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SKPhotoBrowser: 6aaa8f232752e87c7e76bace183bead0a137097d
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   YPImagePicker: 6f410f475bd22fa8cd430495b54d4b2f15865c2d
 
-PODFILE CHECKSUM: e98d4ade14d0e702dc923443aaa5861f12c9ccaf
+PODFILE CHECKSUM: 660e18948a9533eac0eddc0cbf50466ac8432b7a
 
 COCOAPODS: 1.11.2

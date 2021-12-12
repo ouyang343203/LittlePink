@@ -98,9 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     
     private func confing() {
-        /*
-         * 调用隐私合规处理方法
-         */
+        // MARK: - 调用隐私合规处理方法
         AMapPrivacyUtility.handlePrivacyAgreeStatus()
         AMapServices.shared().enableHTTPS = true
         AMapServices.shared().apiKey = KGaodekey
