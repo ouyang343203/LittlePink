@@ -38,7 +38,8 @@ class PoiSearchVC: UIViewController {
     var latitude = 0.0
     var longitude = 0.0
     var keywords = ""
-    var currentPage = 1
+    var currentaroundPage = 1
+    var currentkeywordsPage = 1
     var pageCount = 1
    // private var pois = [Array(repeating: "", count: 2)]//定义只有两个元素的嵌套数组定义
     var pois = KPOIInitArray//定义有默认值的嵌套数组
@@ -50,7 +51,7 @@ class PoiSearchVC: UIViewController {
         // Do any additional setup after loading the view.
         config()//定位配置
         requstlocationData()// 获取当前定位的位置周边的信息
-        mapSearch?.delegate = self
+
     }
     
     /*
@@ -89,62 +90,19 @@ extension PoiSearchVC:UIScrollViewDelegate {
     }
 }
 
-extension PoiSearchVC:UISearchBarDelegate{
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { dismiss(animated: true, completion: nil)}
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchText.isBlank {
-            pois = arouSearchndpois
-            poitableView.reloadData()
-        }
-    }
-    //点击搜索
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, !searchText.isBlank else { return }
-        pois.removeAll()
-        showLoatHUD()
-        keywords = searchText
-        keywordsSearchRequest.keywords = keywords
-        mapSearch?.aMapPOIKeywordsSearch(keywordsSearchRequest)
-    }
-}
-
 extension PoiSearchVC:AMapLocationManagerDelegate{
     
     func amapLocationManager(_ manager: AMapLocationManager!, doRequireLocationAuth locationManager: CLLocationManager!) {
         locationManager.requestWhenInUseAuthorization()
     }
 }
-  // MARK: -  根据定位经纬度获取周边搜索信息
-extension PoiSearchVC:AMapSearchDelegate {
-    func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-        hidLoadHUD()
-        let poicount = response.count
-        if poicount > kMaPagesize  {//总数据大于当前页码数量时页码+1表示还有下一页
-            pageCount = poicount/kMaPagesize + 1
+
+extension PoiSearchVC{
+    func endRefreshing(_ currentPage:Int) {
+        if currentkeywordsPage < pageCount{
+            mjfooter.endRefreshing()
         }else{
             mjfooter.endRefreshingWithNoMoreData()
         }
-        
-        if poicount == 0 { return }
-        for poi in response.pois {
-            let province = poi.province == poi.city ? "不显示位置" : poi.province.unwrapedText
-            let address = poi.district == poi.address ? "" : poi.address
-            let detileaddress = "\(province)\(poi.city.unwrapedText)\(poi.district.unwrapedText)\(address.unwrapedText)"
-            print("详细地址:\(detileaddress)")
-            let poi = [province,detileaddress]
-            pois.append(poi)
-            
-            // 第一次定位以后的周边搜索的数据副本存储
-            if request is AMapPOIAroundSearchRequest {
-                arouSearchndpois.append(poi)
-            }
-           poitableView.reloadData()
-        }
     }
 }
-
-
-
