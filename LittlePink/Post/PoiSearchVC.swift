@@ -51,7 +51,6 @@ class PoiSearchVC: UIViewController {
         // Do any additional setup after loading the view.
         config()//定位配置
         requstlocationData()// 获取当前定位的位置周边的信息
-
     }
     
     /*
@@ -73,7 +72,9 @@ extension PoiSearchVC:UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: KPOICellID, for: indexPath) as! POICell
-        cell.poiInfos = pois[indexPath.row]
+        if pois.count > indexPath.row {
+            cell.poiInfos = pois[indexPath.row]
+        }
         return cell
     }
 }

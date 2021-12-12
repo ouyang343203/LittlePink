@@ -15,6 +15,7 @@ extension PoiSearchVC:UISearchBarDelegate{
         
         if searchText.isBlank {
             pois = arouSearchndpois
+            setAroundSearchFooter()//当数据清楚以后需要调用重置周边搜索数据否者当用户加载更多的数据的时候会停留加载keywordsSearchPullToRefresh或者其他的接口
             poitableView.reloadData()
         }
     }
@@ -22,8 +23,9 @@ extension PoiSearchVC:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text, !searchText.isBlank else { return }
         pois.removeAll()
+        currentkeywordsPage = 1
         keywords = searchText
-        mjfooter.setRefreshingTarget(self, refreshingAction: #selector(keywordsSearchPullToRefresh))
+        setKeywordsSearchFooter()
         showLoatHUD()
         makeKeywordstSearch(keywords)
     }
@@ -42,7 +44,7 @@ extension PoiSearchVC:AMapSearchDelegate {
       
       if poicount == 0 { return }
       for poi in response.pois {
-          let province = poi.province == poi.city ? "不显示位置" : poi.province.unwrapedText
+          let province = poi.province == poi.city ? "" : poi.province.unwrapedText
           let address = poi.district == poi.address ? "" : poi.address
           let detileaddress = "\(province)\(poi.city.unwrapedText)\(poi.district.unwrapedText)\(address.unwrapedText)"
           print("详细地址:\(detileaddress)")
@@ -63,6 +65,11 @@ extension PoiSearchVC {
         keywordsSearchRequest.keywords = keywords
         keywordsSearchRequest.page = page
         mapSearch?.aMapPOIKeywordsSearch(keywordsSearchRequest)//根据定位经纬度获取周边搜索信息
+    }
+    
+    func setKeywordsSearchFooter(){
+        mjfooter.resetNoMoreData()
+        mjfooter.setRefreshingTarget(self, refreshingAction: #selector(keywordsSearchPullToRefresh))
     }
 }
 

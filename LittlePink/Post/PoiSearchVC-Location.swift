@@ -49,14 +49,14 @@ extension PoiSearchVC{
                 // MARK: -搜索周边POI搜索在代理AMapSearchDelegate处理
                 weakself.latitude = location.coordinate.latitude
                 weakself.longitude = location.coordinate.longitude
+                weakself.setAroundSearchFooter()
                 weakself.makeArountsearch()
-                weakself.mjfooter.setRefreshingTarget(weakself, refreshingAction: #selector(weakself.aroundSearchPullToRefresh))
             }
         
             if let reGeocode = reGeocode {
  
                 guard let formattedAddress = reGeocode.formattedAddress, !formattedAddress.isEmpty else{ return}
-                let province = reGeocode.province == reGeocode.city ? "不显示位置" : reGeocode.province.unwrapedText//合并省和市是同一级的情况
+                let province = reGeocode.province == reGeocode.city ? "" : reGeocode.province.unwrapedText//合并省和市是同一级的情况
                 let currentPOI = [province,"\(province)\(reGeocode.city.unwrapedText )\(reGeocode.district.unwrapedText)\(reGeocode.street.unwrapedText)\(reGeocode.number.unwrapedText)"]
 
                 weakself.pois.append(currentPOI)
@@ -74,6 +74,11 @@ extension PoiSearchVC {
    private func makeArountsearch(_ page:Int = 1) {
         aroundSearchRequest.page = page
         mapSearch?.aMapPOIAroundSearch(aroundSearchRequest)//根据定位经纬度获取周边搜索信息
+    }
+    
+    func setAroundSearchFooter(){
+        mjfooter.resetNoMoreData()
+        mjfooter.setRefreshingTarget(self, refreshingAction: #selector(aroundSearchPullToRefresh))
     }
 }
 
