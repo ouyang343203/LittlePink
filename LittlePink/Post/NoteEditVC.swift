@@ -93,6 +93,15 @@ class NoteEditVC: UIViewController {
         locationManager.requestWhenInUseAuthorization()
     }
 
+    @IBAction func saveDraftNote(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func postNote(_ sender: Any) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if  let channelVC = segue.destination as? ChannelVC{

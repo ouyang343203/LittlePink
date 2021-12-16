@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -372,14 +373,53 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="X1B-Nk-JAa"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="3uE-wG-God"/>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-fn-Qik">
+                                <rect key="frame" x="15" y="818" width="384" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-cg-gjY">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="44"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="存草稿">
+                                            <color key="titleColor" systemColor="secondaryLabelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveDraftNote:" destination="Q25-4x-17k" eventType="touchUpInside" id="pfM-gY-lmq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5Q-Fg-ZCF">
+                                        <rect key="frame" x="81" y="0.0" width="303" height="44"/>
+                                        <color key="backgroundColor" name="main"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="发布笔记">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="postNote:" destination="Q25-4x-17k" eventType="touchUpInside" id="crZ-PH-9Fj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nEa-ub-hv2"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ajf-xf-0Eu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8gm-Cg-tbc" firstAttribute="trailing" secondItem="Ajf-xf-0Eu" secondAttribute="trailing" id="8wO-Go-pKU"/>
                             <constraint firstAttribute="bottom" secondItem="8gm-Cg-tbc" secondAttribute="bottom" id="Gtc-0a-uv4"/>
+                            <constraint firstItem="Ajf-xf-0Eu" firstAttribute="bottom" secondItem="a4h-fn-Qik" secondAttribute="bottom" id="KFw-KN-liC"/>
                             <constraint firstItem="8gm-Cg-tbc" firstAttribute="leading" secondItem="Ajf-xf-0Eu" secondAttribute="leading" id="Xxf-ZJ-dSb"/>
                             <constraint firstItem="8gm-Cg-tbc" firstAttribute="top" secondItem="Ajf-xf-0Eu" secondAttribute="top" id="bK5-2f-xd2"/>
+                            <constraint firstItem="Ajf-xf-0Eu" firstAttribute="trailing" secondItem="a4h-fn-Qik" secondAttribute="trailing" constant="15" id="ne7-Bw-Uef"/>
+                            <constraint firstItem="a4h-fn-Qik" firstAttribute="leading" secondItem="Ajf-xf-0Eu" secondAttribute="leading" constant="15" id="rSV-AI-96Q"/>
                         </constraints>
                     </view>
                     <connections>
@@ -858,6 +898,9 @@
         <image name="plus.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="tabbar_column" width="29.5" height="20"/>
         <image name="tabbar_column_selected" width="29.5" height="20"/>
+        <namedColor name="main">
+            <color red="0.92900002002716064" green="0.34099999070167542" blue="0.50599998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

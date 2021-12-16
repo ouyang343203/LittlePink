@@ -31,7 +31,7 @@ extension PoiSearchVC:UISearchBarDelegate{
     }
 }
 
-// MARK: -  根据定位经纬度获取周边搜索信息
+// MARK: -  根据定位经纬度获取周边POI检索信息
 extension PoiSearchVC:AMapSearchDelegate {
   func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
       hidLoadHUD()
@@ -44,14 +44,15 @@ extension PoiSearchVC:AMapSearchDelegate {
       
       if poicount == 0 { return }
       for poi in response.pois {
+          print("兴趣点名称:\(poi.name)")
           let province = poi.province == poi.city ? "" : poi.province.unwrapedText
           let address = poi.district == poi.address ? "" : poi.address
           let detileaddress = "\(province)\(poi.city.unwrapedText)\(poi.district.unwrapedText)\(address.unwrapedText)"
           print("详细地址:\(detileaddress)")
-          let poi = [province,detileaddress]
+          let poi = [poi.name ?? KNoPOIPH, detileaddress]
           pois.append(poi)
           
-          // 第一次定位以后的周边搜索的数据副本存储
+          // 第一次定位以后的周边搜索的第二条以后的数据添加到 数据副本存储当删除搜索内容的时候显示周边定位的数据
           if request is AMapPOIAroundSearchRequest {
               arouSearchndpois.append(poi)
           }

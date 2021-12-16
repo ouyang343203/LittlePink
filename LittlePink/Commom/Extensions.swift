@@ -15,7 +15,7 @@ extension String {
     }
 }
 
-//  设置属性是空的情况
+//  设置属性是空的情况 Wrapped表示被解包后的存储的类型 如果解包后要存储为int则可以写成 extension  Optional where Wrapped == Int
 extension  Optional where Wrapped == String  {
     //计算属性
     var unwrapedText:String{ self ?? ""}

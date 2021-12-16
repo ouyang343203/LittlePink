@@ -33,32 +33,34 @@ extension PoiSearchVC{
                     //逆地理错误：在带逆地理的单次定位中，逆地理过程可能发生错误，此时location有返回值，regeocode无返回值，进行annotation的添加
                     print("逆地理错误:{\(error.code) - \(error.localizedDescription)};")
                     weakself.hidLoadHUD()
+                    return
                 }
                 else {
                     //没有错误：location有返回值，regeocode是否有返回值取决于是否进行逆地理操作，进行annotation的添加
                 }
-                
-                // {formattedAddress:广东省深圳市罗湖区建设路靠近新都酒店; country:中国;province:广东省; city:深圳市; district:罗湖区; citycode:0755; adcode:440303; street:建设路; number:1079号; POIName:新都酒店; AOIName:深圳站;}
-                // {formattedAddress:上海市宝山区富长路靠近外环富长路桥; country:中国;province:上海市; city:上海市; district:宝山区; citycode:021; adcode:310113; street:富长路; number:1118号; POIName:外环富长路桥; AOIName:(null);}
-                // {formattedAddress:西藏自治区日喀则市仲巴县; country:中国;province:西藏自治区; city:日喀则市; district:仲巴县; citycode:0892; adcode:540232; street:(null); number:(null); POIName:(null); AOIName:(null);}
-                
             }
             
             if let location = location {
                 
-                // MARK: -搜索周边POI搜索在代理AMapSearchDelegate处理
+                // MARK: -获取到当前金纬度以后才能搜索周边POI-搜索在代理AMapSearchDelegate处理
                 weakself.latitude = location.coordinate.latitude
                 weakself.longitude = location.coordinate.longitude
                 weakself.setAroundSearchFooter()
                 weakself.makeArountsearch()
             }
         
-            if let reGeocode = reGeocode {
+            if let reGeocode = reGeocode {// 定位周边搜索的到第一条数据
  
+                print("reGeocode:\(reGeocode)")
+                // {formattedAddress:广东省深圳市罗湖区建设路靠近新都酒店; country:中国;province:广东省; city:深圳市; district:罗湖区; citycode:0755; adcode:440303; street:建设路; number:1079号; POIName:新都酒店; AOIName:深圳站;}
+                // {formattedAddress:上海市宝山区富长路靠近外环富长路桥; country:中国;province:上海市; city:上海市; district:宝山区; citycode:021; adcode:310113; street:富长路; number:1118号; POIName:外环富长路桥; AOIName:(null);}
+//            AMapLocationReGeocode:{formattedAddress:上海市静安区西藏北路靠近市北中学; country:中国;province:上海市; city:上海市; district:静安区; citycode:021; adcode:310106; street:西藏北路; number:148号; POIName:市北中学; AOIName:市北中学;}
+                
+                // {formattedAddress:西藏自治区日喀则市仲巴县; country:中国;province:西藏自治区; city:日喀则市; district:仲巴县; citycode:0892; adcode:540232; street:(null); number:(null); POIName:(null); AOIName:(null);}
                 guard let formattedAddress = reGeocode.formattedAddress, !formattedAddress.isEmpty else{ return}
                 let province = reGeocode.province == reGeocode.city ? "" : reGeocode.province.unwrapedText//合并省和市是同一级的情况
-                let currentPOI = [province,"\(province)\(reGeocode.city.unwrapedText )\(reGeocode.district.unwrapedText)\(reGeocode.street.unwrapedText)\(reGeocode.number.unwrapedText)"]
-
+                let currentPOI = [reGeocode.poiName ?? KNoPOIPH,"\(province)\(reGeocode.city.unwrapedText )\(reGeocode.district.unwrapedText)\(reGeocode.street.unwrapedText)\(reGeocode.number.unwrapedText)"]
+                print("currentPOI:\(currentPOI)")
                 weakself.pois.append(currentPOI)
                 weakself.arouSearchndpois.append(currentPOI)//将第一次获取的到周边信息存储到副本中当清除所有的关键字时默认让列表展示周边的搜索的列表数据
                 DispatchQueue.main.async {
