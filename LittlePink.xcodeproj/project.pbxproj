@@ -13,6 +13,7 @@
 		0E36A406272F97390047E368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A405272F97390047E368 /* Assets.xcassets */; };
 		0E36A409272F97390047E368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A407272F97390047E368 /* LaunchScreen.storyboard */; };
 		0E36A411272F990E0047E368 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0E36A410272F990E0047E368 /* .gitignore */; };
+		3086AFE1285B27A500CF5EBE /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086AFE0285B27A500CF5EBE /* MenuModel.swift */; };
 		981BA4E7274B82D800407BE7 /* NoteEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4E6274B82D800407BE7 /* NoteEditVC.swift */; };
 		981BA4E9274B900D00407BE7 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4E8274B900D00407BE7 /* PhotoCell.swift */; };
 		981BA4EC274BDD0E00407BE7 /* DemoEditorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BA4EB274BDD0E00407BE7 /* DemoEditorTest.swift */; };
@@ -57,6 +58,7 @@
 		0E36A40A272F97390047E368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E36A410272F990E0047E368 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1F6218EF2AA74C1996D393C1 /* Pods-LittlePink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LittlePink.debug.xcconfig"; path = "Target Support Files/Pods-LittlePink/Pods-LittlePink.debug.xcconfig"; sourceTree = "<group>"; };
+		3086AFE0285B27A500CF5EBE /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 		44CA0333088E376A25B73CE5 /* Pods_LittlePink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LittlePink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98101CB3273E64310018459E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		981BA4E6274B82D800407BE7 /* NoteEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditVC.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = LittlePink;
 			sourceTree = "<group>";
 		};
+		3086AFDF285B278500CF5EBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3086AFE0285B27A500CF5EBE /* MenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5A9464405CB91C529A4FE0CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		98A79D442739174000204DA0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3086AFDF285B278500CF5EBE /* Model */,
 				98A79D382738D90F00204DA0 /* HomeVC.swift */,
 				98A79D3E2739128700204DA0 /* NearByVC.swift */,
 				98A79D3A2739102600204DA0 /* FollowVC.swift */,
@@ -389,6 +400,7 @@
 				981BA4E7274B82D800407BE7 /* NoteEditVC.swift in Sources */,
 				98716C782765DA3800DA8EFD /* PoiSearchVC-Location.swift in Sources */,
 				98A79D392738D90F00204DA0 /* HomeVC.swift in Sources */,
+				3086AFE1285B27A500CF5EBE /* MenuModel.swift in Sources */,
 				0E36A3FA272F97350047E368 /* AppDelegate.swift in Sources */,
 				982D4175275DCA0600EDC5B2 /* AMapPrivacyUtility.swift in Sources */,
 				98C045EC275F3C10001CDF84 /* PoiSearchVC-Config.swift in Sources */,
@@ -577,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4ZPFWZ992X;
+				DEVELOPMENT_TEAM = J27C4WHNQT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pink;
@@ -603,6 +615,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LittlePink/LittlePink-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -614,7 +627,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4ZPFWZ992X;
+				DEVELOPMENT_TEAM = J27C4WHNQT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LittlePink/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Pink;
@@ -640,6 +653,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "LittlePink/LittlePink-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
