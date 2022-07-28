@@ -16,5 +16,8 @@ platform:ios, '10.0'
   pod 'AMapSearch'
   pod 'AMapSearch'
   pod 'MJRefresh'
+  pod 'Alamofire', '5.5.0'
+  pod 'HandyJSON', '5.0.2'
+  pod 'Moya', '14.0.0'
   
 end
